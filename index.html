@@ -1,0 +1,4143 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SR কৃষি & নার্সারি</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@100..800&display=swap" rel="stylesheet">
+    <!-- Google Fonts (Hind Siliguri & Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Reset & Variables */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --primary: #008628;
+            --primary-hover: #00a331;
+            --primary-light: #ffedd5;
+            --text-main: #1f2937;
+            --text-muted: #6b7280;
+            --bg-body: #f9fafb;
+            --bg-white: #ffffff;
+            --bg-dark: #111827;
+        }
+
+        body {
+            font-family: "Anek Bangla", sans-serif !important;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            padding-bottom: 64px;
+        }
+
+        @media (min-width: 768px) {
+            body {
+                padding-bottom: 0;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-family: inherit;
+        }
+
+        /* Container Limit */
+      .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background-color: var(--bg-white);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 10px; /* প্যাডিং কমানো হলো */
+    flex-wrap: nowrap;
+    gap: 8px; /* গ্যাপ কমিয়ে দেওয়া হলো */
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-img {
+    height: 45px; 
+    width: auto;   
+    display: block;
+}
+
+.mobile-menu-btn {
+    color: #000000;
+    font-size: 20px;
+}
+
+
+@media (min-width: 768px) {
+    .mobile-menu-btn {
+        display: none;
+    }
+}
+
+/* Navigation */
+nav.desktop-nav {
+    display: none;
+    align-items: center;
+    gap: 20px; /* গ্যাপ একটু কমিয়ে দেওয়া হলো যাতে সহজে ধরে যায় */
+    font-weight: 500;
+    color: #374151;
+    white-space: nowrap; /* নেভবারের লেখা এক লাইনে রাখবে */
+}
+
+@media (min-width: 768px) {
+    nav.desktop-nav {
+        display: flex;
+    }
+}
+
+nav.desktop-nav a {
+    white-space: nowrap; /* কোনো মেনু আইটেম ভাঙবে না */
+}
+
+nav.desktop-nav a:hover {
+    color: var(--primary);
+    transition: color 0.2s;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    color: #374151;
+    font-weight: 500;
+    padding: 8px 0;
+    font-size: 16px; /* ফন্ট সাইজ সামান্য এডজাস্ট করা হলো */
+    white-space: nowrap;
+}
+
+.dropdown-btn:hover {
+    color: green;
+}
+
+.dropdown-btn i {
+    font-size: 12px;
+    margin-left: 4px;
+    transition: transform 0.2s;
+}
+
+.dropdown:hover .dropdown-btn i {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 192px;
+    background-color: var(--bg-white);
+    border: 1px solid #f3f4f6;
+    border-radius: 12px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    padding: 8px 0;
+    display: none;
+    z-index: 50;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    font-size: 14px;
+    color: #374151;
+    transition: all 0.2s;
+}
+
+.dropdown-item:hover {
+    background-color: #fff7ed;
+    color: var(--primary);
+}
+
+.dropdown-item i {
+    color: #007a33;
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+/* Header Actions (Search, Phone, Cart) */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #374151;
+    font-size: 18px;
+}
+
+.header-actions button {
+    color: #374151;
+    transition: color 0.2s;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.header-actions button:hover {
+    color: var(--primary);
+}
+
+.cart-icon-btn {
+    position: relative;
+}
+
+        .badge-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: #007932;
+            color: white;
+            font-size: 10px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        /* Mobile Side Menu */
+        .drawer-overlay {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 50;
+            transition: opacity 0.3s;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .drawer-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 288px;
+            height: 100%;
+            background-color: var(--bg-white);
+            z-index: 50;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+            overflow-y: auto;
+        }
+
+        .side-menu.active {
+            transform: translateX(0);
+        }
+
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 16px;
+            margin-bottom: 16px;
+        }
+
+        .menu-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-weight: 500;
+        }
+
+        .menu-nav a {
+            padding: 8px 0;
+            border-bottom: 1px solid #f9fafb;
+            color: #374151;
+        }
+
+        .accordion-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0; /* প্যাডিং বাড়ানো হয়েছে টাচ করার সুবিধার জন্য */
+    color: #1f2937;
+    font-size: 16px; /* লেখা বড় করা হলো */
+    text-align: left;
+    font-weight: 500;
+    background: none;
+    border: none;
+    font-family: 'Anek Bangla', sans-serif;
+}
+
+        /* Accordion Animation */
+        .accordion-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .accordion-content.open {
+            grid-template-rows: 1fr;
+            opacity: 1;
+        }
+
+        .accordion-inner {
+            overflow: hidden;
+        }
+
+        .accordion-list {
+            margin-top: 4px;
+            padding: 8px 0 8px 12px;
+            font-size: 14px;
+            background-color: rgba(249, 250, 251, 0.8);
+            border-radius: 12px;
+            border-left: 4px solid #00852c;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+       .accordion-list a {
+    display: flex;
+    align-items: center;
+    padding: 10px 8px; /* ক্লিক এরিয়া বাড়ানো হলো */
+    border: none;
+    border-radius: 8px;
+    font-size: 13px; /* ভেতরের টেক্সট সাইজ বাড়ানো হলো */
+    color: #000000;
+    font-family: 'Anek Bangla', sans-serif;
+}
+
+        .accordion-list a:hover {
+            background-color: #fff7ed;
+            color: var(--primary);
+        }
+
+        /* আইকন এবং টেক্সটের মাঝে গ্যাপ ঠিক রাখা */
+.accordion-list i {
+    color: #018136;
+    margin-right: 12px;
+    width: 20px; /* আইকন এরিয়া ফিক্স করা হলো যাতে টেক্সটগুলো সোজা থাকে */
+    text-align: center;
+}
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
+
+        /* Hero Banner */
+        .hero-section {
+            padding: 16px 0 24px 0;
+        }
+
+        .hero-card {
+            background: linear-gradient(to right, #009238, #018f30);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .hero-card {
+                padding: 40px;
+                flex-direction: row;
+            }
+        }
+
+        .hero-text {
+            z-index: 10;
+            max-width: 512px;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        @media (min-width: 768px) {
+            .hero-text {
+                text-align: left;
+                margin-bottom: 0;
+            }
+        }
+
+        .hero-badge {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #9a3412;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .hero-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: #111827;
+            line-height: 1.25;
+            margin-bottom: 12px;
+        }
+
+        @media (min-width: 640px) {
+            .hero-title {
+                font-size: 36px;
+            }
+        }
+
+        .btn-primary {
+            background-color: rgb(0, 61, 0);
+            color: white;
+            font-weight: 500;
+            padding: 10px 24px;
+            border-radius: 8px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+            display: inline-block;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .hero-graphic {
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-circle {
+            width: 192px;
+            height: 192px;
+            background-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(12px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid rgba(255, 255, 255, 0.5);
+        }
+
+        @media (min-width: 640px) {
+            .hero-circle {
+                width: 256px;
+                height: 256px;
+            }
+        }
+
+        .hero-circle i {
+            color: #007736;
+            font-size: 70px;
+        }
+
+        @media (min-width: 640px) {
+            .hero-circle i {
+                font-size: 96px;
+            }
+        }
+
+        /* Floating Cart Widget */
+        .floating-cart {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 30;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @media (min-width: 640px) {
+            .floating-cart {
+                display: flex;
+            }
+        }
+
+        .floating-cart-btn {
+            background-color: #00642d;
+            color: white;
+            padding: 12px;
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 70px;
+        }
+
+        .floating-cart-btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .floating-cart-total {
+            background-color: white;
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 800;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-top: 4px;
+        }
+
+        /* Products Grid */
+        .products-section {
+           padding: 32px 0;
+           scroll-margin-top: 80px; 
+        }
+
+        .products-section1 {
+           padding: 32px 0;
+           scroll-margin-top: 80px; 
+        }
+
+          .products-section2 {
+           padding: 32px 0;
+           scroll-margin-top: 80px; 
+        }
+
+          .products-section3 {
+           padding: 32px 0;
+           scroll-margin-top: 80px; 
+        }
+
+          .products-section4 {
+           padding: 32px 0;
+           scroll-margin-top: 80px; 
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+            color: #1f2937;
+            margin-bottom: 24px;
+        }
+
+        @media (min-width: 640px) {
+            .section-title {
+                font-size: 24px;
+            }
+        }
+
+       .product-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* মোবাইল স্ক্রিনে ১ কলাম অর্থাৎ উপর-নিচ থাকবে */
+    gap: 20px; /* কার্ডগুলোর মাঝের দূরত্ব */
+    padding: 0 12px;
+}
+
+      @media (min-width: 740px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* ট্যাবলেটে ২টি করে কার্ড পাশাপাশি দেখাবে */
+    }
+}
+
+        @media (min-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+        }
+
+         @media (min-width: 1080px) {
+            .product-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
+        }
+
+        /* --- কার্ড লেআউট --- */
+.product-card {
+    background-color: white;
+    border: 1px solid #f3f4f6;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    transition: box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative; /* এটি হোভার ইফেক্টের জন্য জরুরি */
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* --- ডিটেইলস সেকশন --- */
+.product-details {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-img-box {
+    width: 100%;
+    height: 200px; /* মোবাইল ভিউর জন্য হাইড বাড়িয়ে ২০০ পিক্সেল বা আপনার পছন্দমতো দেওয়া হলো (আগে ১২৮px ছিল) */
+    background-color: #f9fafb;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+/* বড় স্ক্রিনের জন্য একটু বাড়িয়ে দিতে পারেন চাইলে */
+@media (min-width: 640px) {
+    .product-img-box {
+        height: 220px; 
+    }
+}
+
+.product-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.product-card:hover .product-img-box img {
+    transform: scale(1.05);
+}
+
+/* --- টেক্সট স্টাইল --- */
+.product-tag {
+    font-size: 13px;
+    color: darkgreen;
+    font-weight: 600;
+    background-color: #fff7ed;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.product-title {
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 15px;
+    text-align: left;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@media (min-width: 640px) {
+    .product-title {
+        font-size: 14px;
+    }
+}
+
+.product-price {
+    margin-top: 8px;
+    text-align: left;
+}
+
+.current-price {
+    color: black;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.product-weight{
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.old-price {
+    font-size: 13px;
+    color: red;
+    text-decoration: line-through;
+    margin-left: 4px;
+}
+
+/* --- হোভার ইফেক্ট (নতুন) --- */
+.product-hover-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.98); /* কিছুটা অস্বচ্ছ সাদা */
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 10;
+    border-radius: 16px;
+}
+
+.product-card:hover .product-hover-info {
+    opacity: 1;
+    visibility: visible;
+}
+
+.product-hover-info h4 {
+    margin-top: 0;
+    font-size: 14px;
+    color: #111827;
+    margin-bottom: 10px;
+}
+
+.product-hover-info ul {
+    padding-left: 18px;
+    color: #4b5563;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* --- বাটন স্টাইল --- */
+.add-to-cart-btn {
+    width: 100%;
+    background-color: #008854;
+    color: white;
+    padding: 8px 0;
+    font-size: 12px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    cursor: pointer;
+    border: none;
+    
+    /* বাটনটি সবসময় উপরে রাখার জন্য এই ২ লাইন যোগ করুন */
+    position: relative;
+    z-index: 20; 
+}
+
+@media (min-width: 640px) {
+    .add-to-cart-btn {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+}
+
+.add-to-cart-btn:hover {
+    background-color: rgb(0, 126, 0);
+}
+
+        /* Footer */
+        footer {
+            background-color: rgb(194, 204, 223);
+            color: #000000;
+            padding: 40px 16px 24px 16px;
+            margin-top: 48px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+
+        .footer-logo {
+    height: 55px;      /* আপনার লোগোর উচ্চতা অনুযায়ী মান ঠিক করুন */
+    width: auto;       /* লোগোর অনুপাত ঠিক রাখবে */
+    display: block;
+}
+
+.footer-brand a {
+    display: inline-block;
+}
+
+        .footer-text {
+            font-size: 14px;
+            color: #000000;
+        }
+
+        .footer-title {
+            color: rgb(2, 95, 33);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .footer-contact p {
+            font-size: 14px;
+            color: #000000;
+            margin-bottom: 8px;
+        }
+
+        .footer-contact i {
+            margin-right: 8px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+            font-size: 20px;
+        }
+
+        .social-links a {
+            color: #000000;
+            transition: color 0.2s;
+        }
+
+        .social-links a:hover {
+            color: rgb(0, 110, 55);
+        }
+
+        .copyright {
+            border-top: 1px solid #004e21;
+            margin-top: 32px;
+            padding-top: 24px;
+            text-align: center;
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        /* Fixed Mobile Bottom Bar */
+        .mobile-bottom-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #006315;
+            color: white;
+            z-index: 40;
+            border-top: 8px solid #006315;
+            box-shadow: 0 -4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        @media (min-width: 768px) {
+            .mobile-bottom-bar {
+                display: none;
+            }
+        }
+
+        .mobile-bottom-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 8px 4px;
+            text-align: center;
+        }
+
+        .mobile-bottom-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            width: 20%;
+        }
+
+        .mobile-bottom-item i {
+            font-size: 18px;
+        }
+
+        .mobile-bottom-item span {
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        .cart-modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 50;
+    display: flex;
+    justify-content: flex-end;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.cart-modal.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Cart Drawer Content (Right to Left Slide Animation) */
+.cart-drawer-content {
+    background-color: white;
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: -10px 0 15px -3px rgba(0, 0, 0, 0.1);
+    
+    /* স্লাইড অ্যানিমেশনের জন্য কোড */
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cart-modal.open .cart-drawer-content {
+    transform: translateX(0);
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 16px;
+}
+
+.cart-items-container {
+    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow-y: auto;
+    max-height: 40vh;
+}
+
+.cart-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9fafb;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #e5e7eb;
+}
+
+.cart-form {
+    margin-top: 16px;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 16px;
+}
+
+.cart-form.hidden {
+    display: none;
+}
+
+.cart-form input, .cart-form textarea {
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 14px;
+    margin-bottom: 12px;
+    outline: none;
+    font-family: inherit;
+}
+
+.cart-form input:focus, .cart-form textarea:focus {
+    border-color: #017c49;
+}
+
+.cart-footer {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 16px;
+}
+
+.cart-total-row {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+.btn-confirm {
+    width: 100%;
+    background-color: #00772c; /* হোয়াটসঅ্যাপের অফিশিয়াল সবুজ কালার */
+    color: white;
+    padding: 13px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+    transition: all 0.3s ease; /* হোভারের স্মুথ অ্যানিমেশনের জন্য */
+}
+
+/* মাউস নিলে যে চমৎকার ইফেক্ট বা হোভার হবে */
+.btn-confirm:hover {
+    background-color: #008332;
+    box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+    transform: translateY(-2px); /* হালকা একটু ওপরের দিকে ভেসে উঠবে */
+}
+
+.btn-confirm:active {
+    transform: translateY(0);
+}
+
+.about-section-wrapper {
+    background-color: #f9fafb;
+    overflow-x: hidden;
+    padding-top: 20px;
+    scroll-margin-top: 50px;
+}
+
+.about-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 1. Banner */
+.about-banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
+                url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=1200');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 16px;
+    margin-bottom: 32px;
+    border-radius: 12px;
+}
+
+.about-banner h1 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.about-banner p {
+    font-size: 14px;
+    color: #e5e7eb;
+}
+
+/* 2. Story Section */
+.about-story {
+    margin-bottom: 40px;
+}
+
+.about-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: center;
+}
+
+.about-text h2 {
+    font-size: 22px;
+    color: #1f2937;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.about-text p {
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 14px;
+    font-size: 15px;
+}
+
+.about-img img {
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+/* 3. Values Section */
+.about-values {
+    background-color: #ffffff;
+    padding: 36px 0;
+    border-top: 1px solid #f3f4f6;
+    border-bottom: 1px solid #f3f4f6;
+    margin-bottom: 40px;
+}
+
+.about-title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 28px;
+    color: #1f2937;
+}
+
+.about-card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+}
+
+.about-card {
+    background-color: #f9fafb;
+    padding: 24px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.about-icon {
+    width: 54px;
+    height: 54px;
+    background-color: #ffedd5;
+    color: #006e32;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin: 0 auto 16px auto;
+}
+
+.about-card h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1f2937;
+}
+
+.about-card p {
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* 4. Location Section */
+
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 50px; /* গোল কোনা */
+    padding: 3px 10px;
+    margin: 0 15px;
+    width: 100%;
+    max-width: 300px;
+    transition: all 0.3s ease; /* স্মুথ ট্রানজিশন */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* হালকা ছায়া */
+}
+
+.search-container:focus-within {
+    border-color: #00883d; /* ফোকাস করলে বর্ডার কালার পরিবর্তন */
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.2);
+}
+
+#product-search, #product-search::placeholder {
+    font-family: "Anek Bangla", sans-serif !important;
+}
+
+.search-container input {
+    border: none;
+    background: transparent;
+    font-family: Anek bangla;
+    padding: 5px 10px;
+    width: 100%;
+    outline: none;
+    font-size: 14px;
+}
+
+.search-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #6b7280;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.search-btn:hover {
+    color: #f59e0b; /* মাউস নিলে আইকন কালার পরিবর্তন */
+}
+
+/* Responsive Media Queries (Desktop) */
+@media (min-width: 768px) {
+    .about-banner {
+        padding: 60px 16px;
+        margin-bottom: 48px;
+    }
+    .about-banner h1 {
+        font-size: 36px;
+    }
+    .about-banner p {
+        font-size: 16px;
+    }
+    .about-grid-2 {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+    }
+    .about-text h2 {
+        font-size: 26px;
+    }
+    .about-card-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+}
+
+/* Back to Top Button Styling */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 45px;
+    height: 45px;
+    background-color: rgb(173, 0, 0); /* আপনার থিম কালার */
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 9999 !important; /* সবার উপরে রাখার জন্য */
+    display: none; /* ডিফল্ট হাইড */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.back-to-top-btn:hover{
+    background-color: rgb(128, 0, 0);
+    transform: scale(1.1);
+}
+
+/* মোবাইল রেসপন্সিভ - নতুন পজিশন */
+@media (max-width: 767px) {
+    .back-to-top-btn {
+        bottom: 100px !important; /* মেনুর উপরে তোলার জন্য এখানে পিক্সেল বাড়ানো হয়েছে */
+        right: 15px !important;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.search-container {
+    display: none; 
+}
+
+/* মোবাইল সার্চ আইকন বাটন স্টাইল */
+#search-icon-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #1f2937;
+    cursor: pointer;
+    padding: 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ডেস্কটপ ভিউর জন্য মিডিয়া কোয়েরি (স্ক্রিন বড় হলে মেইন সার্চ বক্স দেখাবে আর মোবাইল আইকন লুকিয়ে যাবে) */
+@media (min-width: 950px) {
+    .search-container {
+        display: flex; 
+    }
+    #search-icon-btn {
+        display: none; 
+    }
+}
+
+/* ২. Search Popup / Modal Styles */
+.search-popup-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 80px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.search-popup-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.search-popup-content {
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.search-popup-overlay.active .search-popup-content {
+    transform: translateY(0);
+}
+
+.search-popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.search-popup-header h3 {
+    font-size: 16px;
+    color: #1f2937;
+    font-weight: 600;
+    margin: 0;
+}
+
+.search-close-icon {
+    font-size: 18px;
+    color: #4b5563;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* পপআপের ভেতরের সার্চ ইনপুট বক্সের ডিজাইন */
+.search-container-popup {
+    display: flex;
+    align-items: center;
+    background: #f9fafb;
+    border: 1px solid #d1d5db;
+    border-radius: 50px;
+    padding: 5px 15px;
+    width: 100%;
+}
+
+.search-container-popup input {
+    border: none;
+    background: transparent;
+    padding: 8px;
+    width: 100%;
+    outline: none;
+    font-size: 14px;
+    font-family: "Anek Bangla", sans-serif;
+}
+
+/* মোবাইল ভিউতে ওপরের কার্ট বাটন লুকিয়ে রাখা */
+.header-actions .cart-icon-btn {
+    display: none;
+}
+
+/* বড় স্ক্রিন বা ডেস্কটপে কার্ট বাটনটি আবার দেখা যাবে */
+@media (min-width: 768px) {
+    .header-actions .cart-icon-btn {
+        display: inline-flex; /* অথবা আপনার প্রজেক্টে যেমন ডিসপ্লে ছিল (যেমন: flex বা block) */
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* কাস্টম বর্ডার বক্স ও ফিক্সড মাইক সেকশন */
+.custom-border-box {
+    display: flex;
+    align-items: center;
+    width: 92%;
+    max-width: 1100px;
+    margin: 20px auto;
+    border: 1px solid green;
+    border-radius: 30px;
+    background-color: #fff8eb;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* বাম পাশের ফিক্সড মাইক ও ঘোষণা বক্স (ব্যাকগ্রাউন্ড কালারসহ) */
+.marquee-badge {
+    display: flex;
+    align-items: center;
+    background-color: #007e39;
+    color: white;
+    padding: 12px 18px;
+    font-weight: bold;
+    font-size: 15px;
+    z-index: 2;
+    white-space: nowrap;
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.badge-text {
+    margin-left: 8px;
+}
+
+/* মারকিউ কন্টেইনার */
+.marquee-container {
+    flex-grow: 1;
+    overflow: hidden;
+    padding: 10px 0;
+    white-space: nowrap;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* মারকিউ ট্র্যাক (স্লাইড হওয়া টেক্সট) */
+.marquee-track {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marqueeScroll 25s linear infinite;
+    pointer-events: none; /* হোভার বা টাচে থামবে না */
+}
+
+/* স্লাইডিং টেক্সটের স্টাইল */
+.marquee-track span {
+    display: inline-block;
+    padding-right: 50px;
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+}
+
+/* কী-ফ্রেম অ্যানিমেশন */
+@keyframes marqueeScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+    </style>
+</head>
+<body>
+
+ <header>
+    <div class="container header-content">
+        
+        <!-- Left: Mobile Toggle & Logo -->
+        <div class="logo-area">
+            <button onclick="toggleMobileSideMenu()" class="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <a href="#" class="brand-logo">
+                <img src="nur.png" alt="SR কৃষি & নার্সারি" class="brand-img">
+            </a>
+        </div>
+
+        <!-- Middle: Desktop Navigation -->
+        <nav class="desktop-nav">
+            <a href="#">হোম</a>
+            
+            <!-- Dropdown -->
+            <div class="dropdown">
+                <button class="dropdown-btn">
+                    <span>ফল গাছ</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                
+                <div class="dropdown-menu">
+                    <a href="#products2" class="dropdown-item">
+                        <i class="fa-solid fa-seedling" style="color: #30aa00; width: 20px; margin-right: 10px;"></i> আম গাছ 
+                    </a>
+                    <a href="#products3" class="dropdown-item">
+                        <i class="fa-solid fa-seedling" style="color: #30aa00; width: 20px; margin-right: 10px;"></i> কাঁঠাল গাছ
+                    </a>
+                    <a href="#products4" class="dropdown-item">
+                      <i class="fa-solid fa-seedling" style="color: #30aa00; width: 20px; margin-right: 10px;"></i> বেল গাছ
+                    </a>
+                    <a href="#products" class="dropdown-item">
+                       <i class="fa-solid fa-seedling" style="color: #30aa00; width: 20px; margin-right: 10px;"></i> লেবু গাছ
+                    </a>
+                    <a href="#products1" class="dropdown-item">
+                       <i class="fa-solid fa-seedling" style="color: #30aa00; width: 20px; margin-right: 10px;"></i> কলা গাছ
+                    </a>
+                    <a href="#products5" class="dropdown-item">
+                       <i class="fa-solid fa-seedling" style="color: #30aa00; width: 20px; margin-right: 10px;"></i> পেয়ারা গাছ
+                    </a>
+                    <a href="#products6" class="dropdown-item">
+                       <i class="fa-solid fa-seedling" style="color: #30aa00; width: 20px; margin-right: 10px;"></i> ডালিম গাছ
+                    </a>
+                    <a href="#products7" class="dropdown-item">
+                       <i class="fa-solid fa-seedling" style="color: #30aa00; width: 20px; margin-right: 10px;"></i> লিচু গাছ
+                    </a>
+                    <a href="#products8" class="dropdown-item">
+                       <i class="fa-solid fa-seedling" style="color: #30aa00; width: 20px; margin-right: 10px;"></i> আঙ্গুর গাছ
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropdown-btn">
+                    <span>ফুল গাছ</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                
+                <div class="dropdown-menu">
+                    <a href="#products9" class="dropdown-item">
+                        <i class="fa-solid fa-seedling" style="color: #30aa00; width: 20px; margin-right: 10px;"></i> গোলাপ ফুলের গাছ
+                    </a>
+                    <a href="#products10" class="dropdown-item">
+                        <i class="fa-solid fa-seedling" style="color: #30aa00; width: 20px; margin-right: 10px;"></i>গাঁদা ফুলের গাছ
+                    </a>
+                    <a href="#products11" class="dropdown-item">
+                        <i class="fa-solid fa-seedling" style="color: #30aa00; width: 20px; margin-right: 10px;"></i>রজনীগন্ধা ফুলের গাছ
+                    </a>
+                    <a href="#products12" class="dropdown-item">
+                      <i class="fa-solid fa-seedling" style="color: #30aa00; width: 20px; margin-right: 10px;"></i>জবা ফুলের গাছ
+                    </a>
+                    <a href="#products13" class="dropdown-item">
+                      <i class="fa-solid fa-seedling" style="color: #30aa00; width: 20px; margin-right: 10px;"></i>বেলি ফুলের গাছ
+                    </a>
+                    
+                </div>
+            </div>
+
+            <a href="#indoor">ইনডোর প্ল্যান্ট</a>
+            <a href="#about">আমাদের সম্পর্কে</a>
+        </nav>
+
+        <!-- Desktop Search Container (মোবাইলে এটি CSS দিয়ে লুকানো থাকবে) -->
+        <div class="search-container">
+            <input type="text" id="product-search" placeholder="পণ্য খুঁজুন..." onkeyup="filterProducts()">
+            <button class="search-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+
+        <!-- Right: Action Icons -->
+        <div class="header-actions">
+            <!-- মোবাইল সার্চ আইকন (মোবাইলে শুধু এটি দেখাবে) -->
+            <button id="search-icon-btn" class="search-trigger-btn" aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <a href="tel:+8801332561231" class="phone-icon-btn" title="Call Us">
+                <i class="fa-solid fa-phone"></i>
+            </a>
+            
+            <button onclick="toggleCart()" class="cart-icon-btn">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-count-top" class="badge-count">0</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+
+<div id="search-modal" class="search-popup-overlay">
+    <div class="search-popup-content">
+        <div class="search-popup-header">
+            <h3>পণ্য খুঁজুন</h3>
+            <button id="search-close-btn" class="search-close-icon"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="search-popup-body">
+            <div class="search-container-popup">
+                <input type="text" id="popup-product-search" placeholder="পণ্যের নাম বা ট্যাগ দিয়ে খুঁজুন..." onkeyup="filterProducts()">
+                <button class="search-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Mobile Side Drawer Overlay -->
+    <div id="side-menu-overlay" onclick="toggleMobileSideMenu()" class="drawer-overlay"></div>
+
+    <!-- Mobile Side Drawer Content -->
+    <div id="side-menu" class="side-menu">
+        <div>
+            <div class="menu-header">
+                <h3 style="font-weight:700; font-size:18px;">মেনু</h3>
+                <button onclick="toggleMobileSideMenu()" style="color:#6b7280; font-size:20px;"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <nav class="menu-nav">
+                <a href="#" onclick="toggleMobileSideMenu()">হোম</a>
+                
+                <!-- Mobile Category Accordion -->
+                <div style="border-bottom: 1px solid #f9fafb; padding: 4px 0;">
+                    <button onclick="toggleMobileCategory()" class="accordion-btn">
+                        <span>ফল গাছ</span>
+                        <i id="mobile-cat-icon" class="fa-solid fa-chevron-down" style="font-size:12px; transition: transform 0.3s;"></i>
+                    </button>
+                    
+                    <div id="mobile-cat-dropdown" class="accordion-content">
+                        <div class="accordion-inner">
+                            <div class="accordion-list">
+                          
+                                    <a href="#products2" class="dropdown-item">
+                        <i class="fa-solid fa-seedling" style="color: #30aa00; width: 20px; margin-right: 10px;"></i> আম গাছ 
+                    </a>
+                    <a href="#products3" class="dropdown-item">
+                        <i class="fa-solid fa-seedling" style="color: #30aa00; width: 20px; margin-right: 10px;"></i> কাঁঠাল গাছ
+                    </a>
+                    <a href="#products4" class="dropdown-item">
+                      <i class="fa-solid fa-seedling" style="color: #30aa00; width: 20px; margin-right: 10px;"></i> বেল গাছ
+                    </a>
+                    <a href="#products" class="dropdown-item">
+                       <i class="fa-solid fa-seedling" style="color: #30aa00; width: 20px; margin-right: 10px;"></i> লেবু গাছ
+                    </a>
+                    <a href="#products1" class="dropdown-item">
+                       <i class="fa-solid fa-seedling" style="color: #30aa00; width: 20px; margin-right: 10px;"></i> কলা গাছ
+                    </a>
+                    <a href="#products5" class="dropdown-item">
+                       <i class="fa-solid fa-seedling" style="color: #30aa00; width: 20px; margin-right: 10px;"></i> পেয়ারা গাছ
+                    </a>
+                    <a href="#products6" class="dropdown-item">
+                       <i class="fa-solid fa-seedling" style="color: #30aa00; width: 20px; margin-right: 10px;"></i> ডালিম গাছ
+                    </a>
+                    <a href="#products7" class="dropdown-item">
+                       <i class="fa-solid fa-seedling" style="color: #30aa00; width: 20px; margin-right: 10px;"></i> লিচু গাছ
+                    </a>
+                    <a href="#products8" class="dropdown-item">
+                       <i class="fa-solid fa-seedling" style="color: #30aa00; width: 20px; margin-right: 10px;"></i> আঙ্গুর গাছ
+                    </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Mobile Category Accordion -->
+                <div style="border-bottom: 1px solid #f9fafb; padding: 4px 0;">
+                    <button onclick="toggleMobileCategor()" class="accordion-btn">
+                        <span>ফুল গাছ</span>
+                        <i id="mobile-ca-icon" class="fa-solid fa-chevron-down" style="font-size:12px; transition: transform 0.3s;"></i>
+                    </button>
+                    
+                    <div id="mobile-ca-dropdown" class="accordion-content">
+                        <div class="accordion-inner">
+                            <div class="accordion-list">
+                  
+                                  <a href="#products9" class="dropdown-item">
+                        <i class="fa-solid fa-seedling" style="color: #30aa00; width: 20px; margin-right: 10px;"></i> গোলাপ ফুলের গাছ
+                    </a>
+                    <a href="#products10" class="dropdown-item">
+                        <i class="fa-solid fa-seedling" style="color: #30aa00; width: 20px; margin-right: 10px;"></i>গাঁদা ফুলের গাছ
+                    </a>
+                    <a href="#products11" class="dropdown-item">
+                        <i class="fa-solid fa-seedling" style="color: #30aa00; width: 20px; margin-right: 10px;"></i>রজনীগন্ধা ফুলের গাছ
+                    </a>
+                    <a href="#products12" class="dropdown-item">
+                      <i class="fa-solid fa-seedling" style="color: #30aa00; width: 20px; margin-right: 10px;"></i>জবা ফুলের গাছ
+                    </a>
+                    <a href="#products13" class="dropdown-item">
+                      <i class="fa-solid fa-seedling" style="color: #30aa00; width: 20px; margin-right: 10px;"></i>বেলি ফুলের গাছ
+                    </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <a href="#indoor" onclick="toggleMobileSideMenu()">ইনডোর প্ল্যান্ট</a>
+                <a href="#about" onclick="toggleMobileSideMenu()">আমাদের সম্পর্কে</a>
+                 
+
+            </nav>
+        </div>
+        
+        <div style="border-top:1px solid #e5e7eb; padding-top:16px; font-size:12px; color:#6b7280; text-align:center;">
+            &copy; 2026 SR কৃষি & নার্সারি All rights reserved.
+        </div>
+    </div>
+
+    <!-- Main Hero Banner Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-card">
+                <div class="hero-text">
+                    <span class="hero-badge">আসল ও বেশি ফলনদায়ক</span>
+                    <h1 class="hero-title">সরাসরি নিজস্ব নার্সারি থেকে আপনার সপ্নের বাগানে নিতে আজই অর্ডার করুন</h1>
+                    <a href="#products2" class="btn-primary">পণ্যসমূহ দেখুন</a>
+                </div>
+                <div class="hero-graphic">
+                    <div class="hero-circle">
+                        <i class="fa-solid fa-jar"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Right Cart Widget -->
+    <div class="floating-cart">
+        <button onclick="toggleCart()" class="floating-cart-btn">
+            <i class="fa-solid fa-basket-shopping" style="font-size:20px; margin-bottom:4px;"></i>
+            <span id="floating-cart-count" style="font-size:12px; font-weight:700;">0 Items</span>
+            <span id="floating-cart-total" class="floating-cart-total">৳ 0</span>
+        </button>
+    </div>
+
+<div class="custom-border-box">
+    <div class="marquee-badge">
+        <span>📢</span>
+        <span class="badge-text">জরুরি কিছু কথা:</span>
+    </div>
+
+    <!-- ডান পাশের স্লাইডিং বা মারকিউ টেক্সট সেকশন -->
+    <div class="marquee-container">
+        <div class="marquee-track">
+            <!-- প্রথম সেট টেক্সট -->
+            <span>🌾 ১০০% আসল গাছের সমাহার! কোনো ভেজাল নেই </span>
+            <span>🚚 সারা দেশে ক্যাশ অন ডেলিভারিতে হোম ডেলিভারি দেওয়া হয় </span>
+            <span>প্রোডাক্ট সম্পর্কে বিস্তারিত জানতে ছবির ওপরে ক্লিক করুন</span>
+            
+           <span>🌾 ১০০% আসল গাছের সমাহার! কোনো ভেজাল নেই </span>
+            <span>🚚 সারা দেশে ক্যাশ অন ডেলিভারিতে হোম ডেলিভারি দেওয়া হয় </span>
+            <span>প্রোডাক্ট সম্পর্কে বিস্তারিত জানতে ছবির ওপরে ক্লিক করুন</span>
+        </div>
+    </div>
+</div>
+
+
+    <section id="products2" class="products-section2 product-section-box">
+        <div class="container">
+            <h2 class="section-title">আম গাছের চারা</h2>
+
+<div class="product-grid">
+
+    <!-- ১. হাড়িভাঙা আম গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="harivanga.jpg" alt="হাড়িভাঙা আম গাছ">
+            </div>
+            <span class="product-tag">Mango Tree</span>
+            <h3 class="product-title">হাড়িভাঙা আম গাছ</h3>
+            <span class="product-weight">উচ্চতা: ৩-৪ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ২৫০</span>
+                <span class="old-price">৳ ৩০০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>জাতের নিশ্চয়তা: শতভাগ আসল হাড়িভাঙা</li>
+                <li>কম সময়ে ফলনশীল কলম চারা</li>
+                <li>ছাদ বাগান বা মাটিতে লাগানোর উপযোগী</li>
+                <li>অত্যন্ত মিষ্টি ও সুস্বাদু আমের জাত</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('হাড়িভাঙা আম গাছের কলম চারা - ৩-৪ ফুট', 250)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ২. আম্রপালি আম গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="amrapali.jpg" alt="আম্রপালি আম গাছ">
+            </div>
+            <span class="product-tag">Mango Tree</span>
+            <h3 class="product-title">আম্রপালি আম গাছ</h3>
+            <span class="product-weight">উচ্চতা: ২.৫-৩ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ২০০</span>
+                <span class="old-price">৳ ২৪০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>গাছের আকৃতি ছোট ও ঝোপালো হয়</li>
+                <li>টব বা ড্রামে চাষের জন্য সেরা পছন্দ</li>
+                <li>নিয়মিত ও প্রচুর পরিমাণে ফলন দেয়</li>
+                <li>আঁটি ছোট ও মাংসালো গাঢ় মিষ্টি আম</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('আম্রপালি আম গাছের চারা - ২.৫-৩ ফুট', 200)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ৩. ল্যাংড়া আম গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="lengra.jpg" alt="ল্যাংড়া আম গাছ">
+            </div>
+            <span class="product-tag">Mango Tree</span>
+            <h3 class="product-title">ল্যাংড়া আম গাছ</h3>
+            <span class="product-weight">উচ্চতা: ৩.৫-৪ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ২৮০</span>
+                <span class="old-price">৳ ৩৫০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>রাজশাহীর বিখ্যাত সুগন্ধযুক্ত জাত</li>
+                <li>শক্তিশালী ও রোগ প্রতিরোধী কলম</li>
+                <li>পর্যাপ্ত রোদে খুব দ্রুত বাড়ে</li>
+                <li>দীর্ঘমেয়াদী ও লাভজনক বাগান করার উপযোগী</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('ল্যাংড়া আম গাছ - ৩.৫-৪ ফুট', 280)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ৪. ফজলি আম গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="fajli.jpg" alt="ফজলি আম গাছ">
+            </div>
+            <span class="product-tag">Mango Tree</span>
+            <h3 class="product-title">ফজলি আম গাছ</h3>
+            <span class="product-weight">উচ্চতা: ৩-৪ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ২৩০</span>
+                <span class="old-price">৳ ২৮০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>আকারে বেশ বড় ও রসালো জাত</li>
+                <li>দেরিতে পাকা সুস্বাদু আম</li>
+                <li>শক্ত ও দীর্ঘস্থায়ী গাছ</li>
+                <li>বাগান করার জন্য অত্যন্ত লাভজনক</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('ঐতিহ্যবাহী ফজলি আম গাছ - ৩-৪ ফুট', 230)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ৫. হিমসাগর আম গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="himsagar.jpg" alt="হিমসাগর আম গাছ">
+            </div>
+            <span class="product-tag">Mango Tree</span>
+            <h3 class="product-title">খাঁটি হিমসাগর আম গাছ</h3>
+            <span class="product-weight">উচ্চতা: ৩-৩.৫ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ৩০০</span>
+                <span class="old-price">৳ ৩৭০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>আমের রাজা হিসেবে পরিচিত সুস্বাদু জাত</li>
+                <li>অতুলনীয় সুবাস ও মিষ্টি স্বাদ</li>
+                <li>কলম চারা হওয়ায় দ্রুত ফল দেয়</li>
+                <li>ছাদ বা মাটিতে চাষ উপযোগী</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('খাঁটি হিমসাগর আম গাছের চারা - ৩-৩.৫ ফুট', 300)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ৬. গোপালভোগ আম গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="gopalbhog.jpg" alt="গোপালভোগ আম গাছ">
+            </div>
+            <span class="product-tag">Mango Tree</span>
+            <h3 class="product-title">গোপালভোগ আম গাছ</h3>
+            <span class="product-weight">উচ্চতা: ৩-৪ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ৩২০</span>
+                <span class="old-price">৳ ৩৯০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>খুব তাড়াতাড়ি পেকে যাওয়া প্রিমিয়াম জাত</li>
+                <li>নরম ও সুমিষ্ট ফাইবারহীন শাঁস</li>
+                <li>স্বাস্থ্যসম্মত ও শক্ত শিকড়ের কলম</li>
+                <li>বাগান মালিকদের প্রথম পছন্দ</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('গোপালভোগ আম গাছ - ৩-৪ ফুট', 320)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ৭. কাটিমন (বারোমাসি) আম গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="katimon.jpg" alt="কাটিমন আম গাছ">
+            </div>
+            <span class="product-tag">Mango Tree</span>
+            <h3 class="product-title">বারোমাসি কাটিমন আম গাছ</h3>
+            <span class="product-weight">উচ্চতা: ২.৫-৩ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ৩৫০</span>
+                <span class="old-price">৳ ৪২০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>বছরে তিনবার আম ধরে</li>
+                <li>গাছ ছোট থাকতেই ফলন শুরু হয়</li>
+                <li>ছাদ বাগানের টবের জন্য সেরা জাত</li>
+                <li>মিষ্টি ও সুস্বাদু বারোমাসি ফল</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('বারোমাসি কাটিমন আম গাছ - ২.৫-৩ ফুট', 350)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+</div>
+</div>
+        </div>
+    </section>
+
+
+
+    <section id="products3" class="products-section3 product-section-box">
+        <div class="container">
+            <h2 class="section-title">কাঁঠাল গাছের চারা</h2>
+<div class="product-grid">
+
+    <!-- ১. বারোমাসি কাঁঠাল গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="baromasi-kathal.jpg" alt="বারোমাসি কাঁঠাল গাছ">
+            </div>
+            <span class="product-tag">Jackfruit Tree</span>
+            <h3 class="product-title">উন্নত জাতের বারোমাসি কাঁঠাল গাছ</h3>
+            <span class="product-weight">উচ্চতা: ৩-৪ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ৩০০</span>
+                <span class="old-price">৳ ৩৭০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>বছরে একাধিকবার কাঁঠাল ধরে</li>
+                <li>অত্যন্ত মিষ্টি ও কোয়াগুলো শক্ত</li>
+                <li>কম সময়ে ফলনশীল কলম চারা</li>
+                <li>মাটিতে লাগানোর জন্য দারুণ উপযোগী</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('উন্নত জাতের বারোমাসি কাঁঠাল গাছ - ৩-৪ ফুট', 300)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ২. খাজা কাঁঠাল গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="khaza-kathal.jpg" alt="খাজা কাঁঠাল গাছ">
+            </div>
+            <span class="product-tag">Jackfruit Tree</span>
+            <h3 class="product-title">দেশি খাজা কাঁঠাল গাছ</h3>
+            <span class="product-weight">উচ্চতা: ৩.৫-৪ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ২২০</span>
+                <span class="old-price">৳ ২৭০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>কাঁঠালের কোয়াগুলো অত্যন্ত শক্ত ও মচমচে</li>
+                <li>দীর্ঘদিন সংরক্ষণ করে খাওয়া যায়</li>
+                <li>শক্তিশালী ও রোগ প্রতিরোধী শিকড়</li>
+                <li>প্রাকৃতিক ও খাঁটি জাতের নিশ্চয়তা</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('দেশি খাজা কাঁঠাল গাছের কলম চারা - ৩.৫-৪ ফুট', 220)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ৩. গলা বা নরম কাঁঠাল গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="gola-kathal.jpg" alt="নরম কাঁঠাল গাছ">
+            </div>
+            <span class="product-tag">Jackfruit Tree</span>
+            <h3 class="product-title">রসালো নরম (গলা) কাঁঠাল গাছ</h3>
+            <span class="product-weight">উচ্চতা: ২.৫-৩ ফুট </span>
+            <div class="product-price">
+                <span class="current-price">৳ ২০০</span>
+                <span class="old-price">৳ ২৪০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>অতিরিক্ত রসালো ও সুমিষ্ট কাঁঠাল</li>
+                <li>পাকলে দারুণ সুঘ্রাণ ছড়ায়</li>
+                <li>খুব দ্রুত বৃদ্ধি পায় ও ছায়া দেয়</li>
+                <li>পরিবারের সবার পছন্দের মিষ্টি জাত</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('রসালো নরম কাঁঠাল গাছ - ২.৫-৩ ফুট', 200)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+</div>
+
+</div>
+</div>
+    </section>
+
+
+
+    
+
+    <section id="products4" class="products-section4 product-section-box">
+        <div class="container">
+            <h2 class="section-title">বেল গাছের চারা</h2>
+
+         <div class="product-grid">
+
+    <!-- ১. দেশি কাগজী বেল গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="bael-tree.jpg" alt="বেল গাছ">
+            </div>
+            <span class="product-tag">Bael Tree</span>
+            <h3 class="product-title">দেশি কাগজী বেল গাছের কলম চারা</h3>
+            <span class="product-weight">উচ্চতা: ৩-৪ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ২৫০</span>
+                <span class="old-price">৳ ৩০০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>কাগজী জাতের পাতলা খোসা ও মিষ্টি বেল ধরে</li>
+                <li>কম সময়ে ফলনশীল শক্তিশালী কলম চারা</li>
+                <li>উভয় মাটি ও ছাদ বাগানের টবের উপযোগী</li>
+                <li>ঔষধি গুণসম্পন্ন ফল ও গাছের চারা</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('দেশি কাগজী বেল গাছের কলম চারা - ৩-৪ ফুট', 250)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ২. থাইল্যান্ডের বারোমাসি বেল গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="thai-bael.jpg" alt="বারোমাসি বেল গাছ">
+            </div>
+            <span class="product-tag">Bael Tree</span>
+            <h3 class="product-title">থাইল্যান্ডের বারোমাসি বেল গাছ</h3>
+            <span class="product-weight">উচ্চতা: ২.৫-৩ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ৩৫০</span>
+                <span class="old-price">৳ ৪০০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>বছরে একাধিকবার বা কম বয়সেই ফল ধরে</li>
+                <li>বেল আকারে বেশ বড় ও মিষ্টি স্বাদের হয়</li>
+                <li>বীজবিহীন বা খুব কম বীজযুক্ত জাত</li>
+                <li>বাগান করার জন্য অত্যন্ত লাভজনক</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('থাইল্যান্ডের বারোমাসি বেল গাছ - ২.৫-৩ ফুট', 350)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ৩. বারি বেল-১ (উন্নত জাত) -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="bari-bael.jpg" alt="বারি বেল গাছ">
+            </div>
+            <span class="product-tag">Bael Tree</span>
+            <h3 class="product-title">বারি উদ্ভাবিত উন্নত জাতের বেল চারা</h3>
+            <span class="product-weight">উচ্চতা: ৩-৩.৫ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ৩০০</span>
+                <span class="old-price">৳ ৩৫০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>কৃষি গবেষণা ইনস্টিটিউট (BARI) কর্তৃক পরীক্ষিত</li>
+                <li>অতিরিক্ত মিষ্টি ও সুগন্ধযুক্ত মন্ড</li>
+                <li>পেটের পীড়া ও হজমে অত্যন্ত উপকারী</li>
+                <li>উচ্চ ফলনশীল ও রোগ প্রতিরোধী</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('বারি উদ্ভাবিত উন্নত জাতের বেল চারা - ৩-৩.৫ ফুট', 300)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="sinduria-bael.jpg" alt="সিন্দুরিয়া বেল গাছ">
+            </div>
+            <span class="product-tag">Bael Tree</span>
+            <h3 class="product-title">সিঁদুর রঙের সিন্দুরিয়া বেল গাছ</h3>
+            <span class="product-weight">উচ্চতা: ৩-৪ ফুট </span>
+            <div class="product-price">
+                <span class="current-price">৳ ৩০০</span>
+                <span class="old-price">৳ ৩৬০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>খোসার গায়ে লালচে বা সিঁদুরে আভা থাকে</li>
+                <li>অতিরিক্ত মিষ্টি ও দারুণ সুগন্ধযুক্ত মণ্ড</li>
+                <li>শরবত ও পেটের সুরক্ষায় অত্যন্ত উপকারী</li>
+                <li>কম সময়ে ফলন দানকারী কলম চারা</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('সিঁদুরে রঙের সিন্দুরিয়া বেল গাছ - ৩-৪ ফুট', 300)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ৪. পাথরঘাটা বেল -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="pathorghata-bael.jpg" alt="পাথরঘাটা বেল গাছ">
+            </div>
+            <span class="product-tag">Bael Tree</span>
+            <h3 class="product-title">প্রাচীন ঐতিহ্যবাহী পাথরঘাটা বেল গাছ</h3>
+            <span class="product-weight">উচ্চতা: ৩.৫-৪ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ২৯০</span>
+                <span class="old-price">৳ ৩৫০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>স্থানীয় প্রাচীন ও অত্যন্ত মিষ্টি জাত</li>
+                <li>গাছ বেশ মজবুত ও দীর্ঘস্থায়ী হয়</li>
+                <li>উচ্চ ঔষধি গুণসম্পন্ন পাকা ফল দেয়</li>
+                <li>মাটিতে লাগানোর জন্য দারুণ উপযোগী</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('প্রাচীন ঐতিহ্যবাহী পাথরঘাটা বেল গাছ - ৩.৫-৪ ফুট', 290)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+</div>
+</div>
+    </section>
+
+
+
+
+    <!-- Products Section -->
+    <section id="products" class="products-section product-section-box">
+        <div class="container">
+            <h2 class="section-title">লেবু গাছ</h2>
+
+           <div class="product-grid">
+
+    <!-- ১. কাগজী লেবু গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="kagzi-lemon.jpg" alt="কাগজী লেবু গাছ">
+            </div>
+            <span class="product-tag">Lemon Tree</span>
+            <h3 class="product-title">সুগন্ধযুক্ত দেশি কাগজী লেবু গাছ</h3>
+            <span class="product-weight">উচ্চতা: ২.৫-৩ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ২০০</span>
+                <span class="old-price">৳ ২৪০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>অত্যন্ত পাতলা খোসা ও ভরপুর রস</li>
+                <li>মনোরম ও তীব্র সুগন্ধযুক্ত দেশি জাত</li>
+                <li>টব বা ছাদ বাগানের জন্য সেরা পছন্দ</li>
+                <li>কলম চারা হওয়ায় খুব দ্রুত ফল দেয়</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('সুগন্ধযুক্ত দেশি কাগজী লেবু গাছ - ২.৫-৩ ফুট', 200)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ২. বারোমাসি চায়না লেবু গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="china-lemon.jpg" alt="চায়না লেবু গাছ">
+            </div>
+            <span class="product-tag">Lemon Tree</span>
+            <h3 class="product-title">থাইল্যান্ডের বারোমাসি চায়না লেবু গাছ</h3>
+            <span class="product-weight">উচ্চতা: ৩-৩.৫ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ২৫০</span>
+                <span class="old-price">৳ ৩০০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>আকারে বেশ বড় ও রসালো লেবু ধরে</li>
+                <li>বছরে ১২ মাসই কম-বেশি ফলন দেয়</li>
+                <li>গাছ ছোট থাকতেই লেবু ধরতে শুরু করে</li>
+                <li>রোগ প্রতিরোধী ও উচ্চ ফলনশীল জাত</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('থাইল্যান্ডের বারোমাসি চায়না লেবু গাছ - ৩-৩.৫ ফুট', 250)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ৩. সিডলেস বা বীজহীন লেবু গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="seedless-lemon.jpg" alt="বীজহীন লেবু গাছ">
+            </div>
+            <span class="product-tag">Lemon Tree</span>
+            <h3 class="product-title">আমদানিকৃত বীজহীন লেবু গাছ</h3>
+            <span class="product-weight">উচ্চতা: ২.৫-৩ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ২৮০</span>
+                <span class="old-price">৳ ৩৪০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>লেবুতে কোনো বীজ থাকে না</li>
+                <li>অতিরিক্ত রস ও চমৎকার স্বাদ</li>
+                <li>বাণিজ্যিক বাগান ও ছাদ বাগানের উপযোগী</li>
+                <li>নিয়মিত ও প্রচুর পরিমাণে ফলন দেয়</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('আমদানিকৃত বীজহীন লেবু গাছ - ২.৫-৩ ফুট', 280)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ৪. এলাচি লেবু গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="elachi-lemon.jpg" alt="এলাচি লেবু গাছ">
+            </div>
+            <span class="product-tag">Lemon Tree</span>
+            <h3 class="product-title">সুস্বাদু সুগন্ধি এলাচি লেবু গাছ</h3>
+            <span class="product-weight">উচ্চতা: ৩-৪ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ২৩০</span>
+                <span class="old-price">৳ ২৮০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>লেবু থেকে এলাচের মতো চমৎকার ঘ্রাণ আসে</li>
+                <li>আকারে মাঝারি গোল ও বেশ রসালো</li>
+                <li>চা কিংবা সালাদে ব্যবহারের জন্য দারুণ জনপ্রিয়</li>
+                <li>সহজে পরিচর্যা করা যায়</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('সুস্বাদু সুগন্ধি এলাচি লেবু গাছ - ৩-৪ ফুট', 230)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+            </div>
+        </div>
+    </section>
+
+
+<section id="products1" class="products-section1 product-section-box">
+        <div class="container">
+            <h2 class="section-title">কলা গাছের চারা</h2>
+
+            <div class="product-grid">
+
+    <!-- ১. সাগর কলা গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="sagar-banana.jpg" alt="সাগর কলা গাছ">
+            </div>
+            <span class="product-tag">Banana Tree</span>
+            <h3 class="product-title">মিষ্টি ও সুস্বাদু সাগর কলা গাছের চারা</h3>
+            <span class="product-weight">উচ্চতা: ৩-৪ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ১২০</span>
+                <span class="old-price">৳ ১৫০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>জনপ্রিয় ও পুষ্টিগুণে ভরপুর দেশি জাত</li>
+                <li>পাকলে খোসা সুন্দর হলুদ ও ভেতরের অংশ মিষ্টি হয়</li>
+                <li>সহজে রোপণযোগ্য ও দ্রুত বৃদ্ধি পায়</li>
+                <li>বাড়ির আঙিনা বা বাগানের জন্য সেরা</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('মিষ্টি ও সুস্বাদু সাগর কলা গাছের চারা - ৩-৪ ফুট', 120)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ২. সবরি কলা গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="sobri-banana.jpg" alt="সবরি কলা গাছ">
+            </div>
+            <span class="product-tag">Banana Tree</span>
+            <h3 class="product-title">খাঁটি সবরি কলা গাছের চারা</h3>
+            <span class="product-weight">উচ্চতা: ৩-৩.৫ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ১৩০</span>
+                <span class="old-price">৳ ১৬০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>অতুলনীয় সুবাস ও অনন্য মিষ্টি স্বাদ</li>
+                <li>প্রতিটি কাঁধিতে প্রচুর কলা ধরে</li>
+                <li>শক্তিশালী ও রোগ প্রতিরোধী জাত</li>
+                <li>বাণিজ্যিক চাষের জন্য দারুণ লাভজনক</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('খাঁটি সবরি কলা গাছের চারা - ৩-৩.৫ ফুট', 130)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ৩. চম্পা কলা গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="champa-banana.jpg" alt="চম্পা কলা গাছ">
+            </div>
+            <span class="product-tag">Banana Tree</span>
+            <h3 class="product-title">দেশি চম্পা কলা গাছের চারা</h3>
+            <span class="product-weight">উচ্চতা: ২.৫-৩ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ১০০</span>
+                <span class="old-price">৳ ১৩০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>আকারে কিছুটা মাঝারি ও স্লিম আকৃতির</li>
+                <li>খুব অল্প সময়ে ফলন দেয়</li>
+                <li>কম পরিচর্যাতেই সুন্দর বেড়ে ওঠে</li>
+                <li>পরিবারের দৈনন্দিন চাহিদার জন্য উপযুক্ত</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('দেশি চম্পা কলা গাছের চারা - ২.৫-৩ ফুট', 100)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ৪. বিচি কলা গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="bichi-banana.jpg" alt="বিচি কলা গাছ">
+            </div>
+            <span class="product-tag">Banana Tree</span>
+            <h3 class="product-title">ঐতিহ্যবাহী দেশি বিচি কলা গাছ</h3>
+            <span class="product-weight">উচ্চতা: ৩-৪ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ৯০</span>
+                <span class="old-price">৳ ১১০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>উচ্চ ঔষধি গুণসম্পন্ন দেশি জাত</li>
+                <li>কাঁচা অবস্থায় তরকারি ও পাকা অবস্থায় খাওয়া যায়</li>
+                <li>প্রাকৃতিক রোগ প্রতিরোধ ক্ষমতা সম্পন্ন গাছ</li>
+                <li>সহজে মানিয়ে নেওয়ার ক্ষমতা রাখে</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('ঐতিহ্যবাহী দেশি বিচি কলা গাছের চারা - ৩-৪ ফুট', 90)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ৩. মেহেরসাগর কলা গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="mehersagar-banana.jpg" alt="মেহেরসাগর কলা গাছ">
+            </div>
+            <span class="product-tag">Banana Tree</span>
+            <h3 class="product-title">মেহেরসাগর কলা গাছ</h3>
+            <span class="product-weight">উচ্চতা: ৩-৪ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ১৩০</span>
+                <span class="old-price">৳ ১৬০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>বড় আকৃতির ও মাংসালো কলার জাত</li>
+                <li>পাকলে দীর্ঘদিন ভালো থাকে</li>
+                <li>গাছ বেশ শক্তিশালী ও ঝড়-ঝাপটা সহনশীল</li>
+                <li>নিয়মিত ও প্রচুর ফলন দেয়</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('উচ্চ ফলনশীল মেহেরসাগর কলা গাছ - ৩-৪ ফুট', 130)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+            </div>
+        </div>
+    </section>
+
+
+
+     <!-- Products Section -->
+    <section id="products5" class="products-section product-section-box">
+        <div class="container">
+            <h2 class="section-title">পেয়ারা গাছের চারা</h2>
+
+
+   <div class="product-grid">
+
+    <!-- ১. থাই-৭ পেয়ারা গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="thai-7-guava.jpg" alt="থাই-৭ পেয়ারা গাছ">
+            </div>
+            <span class="product-tag">Guava Tree</span>
+            <h3 class="product-title">থাই-৭ পেয়ারা গাছ</h3>
+            <span class="product-weight">উচ্চতা: ৩-৪ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ২৫০</span>
+                <span class="old-price">৳ ৩০০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>সারাবছর ফলনশীল অত্যন্ত মিষ্টি জাত</li>
+                <li>পেয়ারা সাইজে বড় ও ভেতরে ক্রিস্পি বা মুচমুচে</li>
+                <li>কম বয়সে ও টবে চাষের জন্য সেরা পছন্দ</li>
+                <li>বাণিজ্যিক বাগান করার জন্য দারুণ লাভজনক</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('উচ্চ ফলনশীল থাই-৭ পেয়ারা গাছ - ৩-৪ ফুট', 250)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ২. কাজরী বা কাঞ্চন পেয়ারা গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="kanchan-guava.jpg" alt="কাঞ্চন পেয়ারা গাছ">
+            </div>
+            <span class="product-tag">Guava Tree</span>
+            <h3 class="product-title">বীজহীন কাঞ্চন পেয়ারা গাছ</h3>
+            <span class="product-weight">উচ্চতা: ২.৫-৩.৫ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ২৮০</span>
+                <span class="old-price">৳ ৩৪০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>ফলের ভেতরে বীজ প্রায় থাকে না বললেই চলে</li>
+                <li>অতিরিক্ত মিষ্টি ও মাংসালো শাঁস</li>
+                <li>ছাদ বাগান বা বাড়ির আঙিনার উপযোগী</li>
+                <li>শক্তিশালী ও রোগ প্রতিরোধী কলম</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('বীজহীন ও সুস্বাদু কাঞ্চন পেয়ারা গাছ - ২.৫-৩.৫ ফুট', 280)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ৩. কেটিএস (KTS) পেয়ারা গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="kts-guava.jpg" alt="কেটিএস পেয়ারা গাছ">
+            </div>
+            <span class="product-tag">Guava Tree</span>
+            <h3 class="product-title">কেটিএস পেয়ারা গাছ</h3>
+            <span class="product-weight">উচ্চতা: ৩-৪ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ৩০০</span>
+                <span class="old-price">৳ ৩৬০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>আকারে বেশ বড় ও ওজনে ভারী হয়</li>
+                <li>টক-মিষ্টি স্বাদের দারুণ সুস্বাদু পেয়ারা</li>
+                <li>নিয়মিত ও প্রচুর পরিমাণে ফল দেয়</li>
+                <li>উন্নত জাতের গ্রাফটেড চারা</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('থাইল্যান্ডের কেটিএস পেয়ারা গাছ - ৩-৪ ফুট', 300)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ৪. লাল পেয়ারা (Red Guava) গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="red-guava.jpg" alt="লাল পেয়ারা গাছ">
+            </div>
+            <span class="product-tag">Guava Tree</span>
+            <h3 class="product-title">লাল শাঁসের পেয়ারা গাছ</h3>
+            <span class="product-weight">উচ্চতা: ২.৫-৩ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ৩২০</span>
+                <span class="old-price">৳ ৩৯০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>ভেতরের অংশ সুন্দর লাল রঙের ও মিষ্টি</li>
+                <li>অ্যান্টিক্সিডেন্ট ও পুষ্টিগুণে ভরপুর</li>
+                <li>নজরকাড়া ফল ও চমৎকার সুবাস</li>
+                <li>শখের বাগান করার জন্য দারুণ আকর্ষণীয়</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('বিদেশি জাতের লাল শাঁসের পেয়ারা গাছ - ২.৫-৩ ফুট', 320)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+   </div>
+
+</div>
+</section>
+
+ <section id="products6" class="products-section product-section-box">
+        <div class="container">
+            <h2 class="section-title">ডালিম গাছের চারা </h2>
+
+            <div class="product-grid">
+
+    <!-- ২. ভগওয়া (Bhagwa) ডালিম গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="bhagwa-pomegranate.jpg" alt="ভগওয়া ডালিম গাছ">
+            </div>
+            <span class="product-tag">Pomegranate Tree</span>
+            <h3 class="product-title">ভগওয়া ডালিম গাছ</h3>
+            <span class="product-weight">উচ্চতা: ২.৫-৩.৫ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ৩৫০</span>
+                <span class="old-price">৳ ৪২০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>বিশ্বজুড়ে বাণিজ্যিকভাবে সবচেয়ে জনপ্রিয় জাত</li>
+                <li>নরম দানা এবং অতুলনীয় মিষ্টি স্বাদ</li>
+                <li>রোগ ও পোকা-মাকড় সহনশীল শক্তিশালী কলম</li>
+                <li>নিয়মিত ও প্রচুর পরিমাণে ফলন দেয়</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('বাণিজ্যিক জাতের ভগওয়া ডালিম গাছ - ২.৫-৩.৫ ফুট', 350)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ৪. দেশি ডালিম গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="desi-pomegranate.jpg" alt="দেশি ডালিম গাছ">
+            </div>
+            <span class="product-tag">Pomegranate Tree</span>
+            <h3 class="product-title">দেশি ডালিম গাছ</h3>
+            <span class="product-weight">উচ্চতা: ২.৫-৩ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ২০০</span>
+                <span class="old-price">৳ ২৪০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>দেশের আবহাওয়ায় শতভাগ উপযোগী</li>
+                <li>কম পরিচর্যাতেই সুন্দর বেড়ে ওঠে</li>
+                <li>ঔষধি গুণসম্পন্ন ফল ও গাছের চারা</li>
+                <li>বাড়ির আঙিনায় লাগানোর জন্য সুলভ</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('প্রাকৃতিক রোগ প্রতিরোধী দেশি ডালিম গাছ - ২.৫-৩ ফুট', 200)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ৫. সিন্দুরি ডালিম গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="sinduri-pomegranate.jpg" alt="সিন্দুরি ডালিম গাছ">
+            </div>
+            <span class="product-tag">Pomegranate Tree</span>
+            <h3 class="product-title">উন্নত জাতের সিন্দুরি ডালিম গাছ</h3>
+            <span class="product-weight">উচ্চতা: ৩-৩.৫ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ২৮০</span>
+                <span class="old-price">৳ ৩৪০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>ফলের খোসা সিঁদুরে লাল ও আকর্ষণীয় হয়</li>
+                <li>ভেতরের দানাগুলো অত্যন্ত মিষ্টি ও রসালো</li>
+                <li>উচ্চ ফলনশীল ও দ্রুত বর্ধনশীল কলম</li>
+                <li>ছাদ বা টবের বাগানের জন্য চমৎকার</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('উন্নত জাতের সিন্দুরি ডালিম গাছ - ৩-৩.৫ ফুট', 280)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ৬. আরবীয় মিষ্টি ডালিম গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="arabian-pomegranate.jpg" alt="আরবীয় মিষ্টি ডালিম গাছ">
+            </div>
+            <span class="product-tag">Pomegranate Tree</span>
+            <h3 class="product-title">আরবীয় জাতের ডালিম গাছ</h3>
+            <span class="product-weight">উচ্চতা: ৩.৫-৪ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ৩৮০</span>
+                <span class="old-price">৳ ৪৫০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>মধ্যপ্রাচ্যের প্রিমিয়াম মিষ্টি জাত</li>
+                <li>দানার সাইজ বড় ও রসালো</li>
+                <li>বিরল ও অত্যন্ত লাভজনক জাতের চারা</li>
+                <li>বিশেষ যত্ন ও পরিচর্যায় দারুণ ফলন দেয়</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('মিষ্টি আরবীয় জাতের ডালিম গাছ - ৩.৫-৪ ফুট', 380)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ৭. মায়ানমার রেড ডালিম গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="myanmar-pomegranate.jpg" alt="মায়ানমার রেড ডালিম গাছ">
+            </div>
+            <span class="product-tag">Pomegranate Tree</span>
+            <h3 class="product-title">রেড প্রিমিয়াম ডালিম গাছ</h3>
+            <span class="product-weight">উচ্চতা: ৩-৪ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ৩৪০</span>
+                <span class="old-price">৳ ৪১০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>গাঢ় লাল রঙের মিষ্টি ও সুস্বাদু দানা</li>
+                <li>সহজে রোগাক্রান্ত হয় না এমন শক্তিশালী জাত</li>
+                <li>নিয়মিত ও প্রচুর পরিমাণে ফল ধরে</li>
+                <li>বাগান মালিকদের কাছে বেশ সমাদৃত</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('মায়ানমার রেড প্রিমিয়াম ডালিম গাছ - ৩-৪ ফুট', 340)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+    </div>
+        </section>
+
+
+ <section id="products7" class="products-section product-section-box">
+        <div class="container">
+            <h2 class="section-title">লিচু গাছের চারা</h2>
+
+            <div class="product-grid">
+<div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="bombay-lychee.jpg" alt="বোম্বাই লিচু গাছ">
+            </div>
+            <span class="product-tag">Lychee Tree</span>
+            <h3 class="product-title">বোম্বাই লিচু গাছের চারা</h3>
+            <span class="product-weight">উচ্চতা: ৩-৪ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ২৫০</span>
+                <span class="old-price">৳ ৩০০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>বাংলাদেশের সবচেয়ে জনপ্রিয় ও পরিচিত জাত</li>
+                <li>লিচুগুলো আকারে বড় ও প্রচুর রসালো হয়</li>
+                <li>টক-মিষ্টি স্বাদের দারুণ সুস্বাদু ফল</li>
+                <li>শক্তিশালী ও দ্রুত ফলনশীল কলম চারা</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('সুস্বাদু বোম্বাই লিচু গাছের কলম চারা - ৩-৪ ফুট', 250)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ২. চায়না থ্রি (China-3) লিচু গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="china3-lychee.jpg" alt="চায়না থ্রি লিচু গাছ">
+            </div>
+            <span class="product-tag">Lychee Tree</span>
+            <h3 class="product-title">প্রিমিয়াম চায়না-৩ লিচু গাছ</h3>
+            <span class="product-weight">উচ্চতা: ৩.৫-৪.৫ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ৩৫০</span>
+                <span class="old-price">৳ ৪২০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>লিচু অত্যন্ত মাংসালো, ছোট আঁটি ও মিষ্টি</li>
+                <li>আকারে বেশ বড় ও দেখতে সুন্দর লালচে</li>
+                <li>বাণিজ্যিক বাগান করার জন্য সেরা পছন্দ</li>
+                <li>উন্নত জাতের গ্রাফটেড চারা</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('প্রিমিয়াম চায়না-৩ লিচু গাছের চারা - ৩.৫-৪.৫ ফুট', 350)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ৩. বেদানা লিচু গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="bedana-lychee.jpg" alt="বেদানা লিচু গাছ">
+            </div>
+            <span class="product-tag">Lychee Tree</span>
+            <h3 class="product-title">বেদানা লিচু গাছ</h3>
+            <span class="product-weight">উচ্চতা: ৩-৪ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ৪০০</span>
+                <span class="old-price">৳ ৪৮০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>লিচুর জাতগুলোর মধ্যে অন্যতম মহার্ঘ ও মিষ্টি</li>
+                <li>আঁটি খুবই ছোট (বেদানা সদৃশ) ও পাতলা খোসা</li>
+                <li>মনোরম সুবাস ও অতুলনীয় স্বাদ</li>
+                <li>শখের বাগান বা বাণিজ্যিক চাষ উপযোগী</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('রাজশাহীর আসল বেদানা লিচু গাছ - ৩-৪ ফুট', 400)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+
+    <!-- ৫. কাঠালী লিচু গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="kathali-lychee.jpg" alt="কাঠালী লিচু গাছ">
+            </div>
+            <span class="product-tag">Lychee Tree</span>
+            <h3 class="product-title">কাঠালী লিচু গাছ</h3>
+            <span class="product-weight">উচ্চতা: ২.৫-৩.৫ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ২২০</span>
+                <span class="old-price">৳ ২৭০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>অন্যান্য জাতের তুলনায় একটু আগেই পাকে</li>
+                <li>শক্তিশালী গাছ ও নিয়মিত ফলনশীল</li>
+                <li>কম পরিচর্যাতেই চমৎকার বেড়ে ওঠে</li>
+                <li>সুলভ মূল্যে উচ্চ ফলন দেওয়ার ক্ষমতা রাখে</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('দেশি কাঠালী লিচু গাছের কলম চারা - ২.৫-৩.৫ ফুট', 220)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+     </div>
+      </div>
+  </section>
+
+                  <section id="products8" class="products-section product-section-box">
+        <div class="container">
+            <h2 class="section-title">আঙ্গুর গাছ</h2>
+
+            <div class="product-grid">
+
+    <!-- ১. ব্ল্যাক মনকা আঙ্গুর গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="black-monukka-grape.jpg" alt="ব্ল্যাক মনকা আঙ্গুর গাছ">
+            </div>
+            <span class="product-tag">Grapevine</span>
+            <h3 class="product-title">ব্ল্যাক মনকা আঙ্গুর গাছ</h3>
+            <span class="product-weight">উচ্চতা: ৩-৪ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ৩৫০</span>
+                <span class="old-price">৳ ৪২০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>আঙ্গুরগুলো গাঢ় কালো ও ভীষণ মিষ্টি</li>
+                <li>আমাদের দেশের আবহাওয়া ও ছাদ বাগানে সহজে চাষ উপযোগী</li>
+                <li>অ্যান্টিঅক্সিডেন্টে ভরপুর সুস্বাদু ফল</li>
+                <li>দ্রুত বর্ধনশীল ও উচ্চ ফলনশীল কলম চারা</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('বিদেশি জাতের ব্ল্যাক মনকা আঙ্গুর গাছ - ৩-৪ ফুট', 350)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ২. থ্রি কালার (সবুজ/লাল) আঙ্গুর গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="three-color-grape.jpg" alt="থ্রি কালার আঙ্গুর গাছ">
+            </div>
+            <span class="product-tag">Grapevine</span>
+            <h3 class="product-title">থাইল্যান্ডের থ্রি কালার আঙ্গুর গাছ</h3>
+            <span class="product-weight">উচ্চতা: ৩.৫-৪.৫ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ৪০০</span>
+                <span class="old-price">৳ ৪৮০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>পাকলে চমৎকার আকর্ষণীয় রঙ ধারণ করে</li>
+                <li>অতিরিক্ত রসালো ও বিচিহীন বা কম বিচিযুক্ত জাত</li>
+                <li>টব, ড্রাম বা ছাদের মাচায় চাষের জন্য সেরা</li>
+                <li>নিয়মিত ও প্রচুর পরিমাণে থোকা ধরে</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('থাইল্যান্ডের থ্রি কালার মিষ্টি আঙ্গুর গাছ - ৩.৫-৪.৫ ফুট', 400)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ৩. বায়োন বা রেড গ্লোব আঙ্গুর গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="red-globe-grape.jpg" alt="রেড গ্লোব আঙ্গুর গাছ">
+            </div>
+            <span class="product-tag">Grapevine</span>
+            <h3 class="product-title">প্রিমিয়াম রেড গ্লোব আঙ্গুর গাছ</h3>
+            <span class="product-weight">উচ্চতা: ৩-৪ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ৪৫০</span>
+                <span class="old-price">৳ ৫৫০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>আঙ্গুরের সাইজ বেশ বড়, গোল ও মাংসালো</li>
+                <li>মিষ্টি ও মুচমুচে স্বাদের জন্য বিশ্বজুড়ে সমাদৃত</li>
+                <li>শক্তিশালী ও রোগ প্রতিরোধী গ্রাফটেড চারা</li>
+                <li>শখের বাগান করার জন্য দারুণ আকর্ষণীয়</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('প্রিমিয়াম রেড গ্লোব আঙ্গুর গাছ - ৩-৪ ফুট', 450)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ৪. সুলতানা (সবুজ) আঙ্গুর গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="sultana-grape.jpg" alt="সুলতানা আঙ্গুর গাছ">
+            </div>
+            <span class="product-tag">Grapevine</span>
+            <h3 class="product-title">সবুজ সুলতানা মিষ্টি আঙ্গুর গাছ</h3>
+            <span class="product-weight">উচ্চতা: ২.৫-৩.৫ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ৩০০</span>
+                <span class="old-price">৳ ৩৬০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>স্বচ্ছ সবুজ রঙের অত্যন্ত মিষ্টি আঙ্গুর</li>
+                <li>পাতলা খোসা ও তুলনামূলক কম বীজযুক্ত</li>
+                <li>খুব অল্প বয়সেই ফল দিতে শুরু করে</li>
+                <li>সহজে পরিচর্যা করা যায়</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('সবুজ সুলতানা মিষ্টি আঙ্গুর গাছ - ২.৫-৩.৫ ফুট', 300)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ৫. লোকাল বা দেশি জাতের আঙ্গুর গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="desi-grape.jpg" alt="দেশি আঙ্গুর গাছ">
+            </div>
+            <span class="product-tag">Grapevine</span>
+            <h3 class="product-title">দেশি আঙ্গুর গাছের চারা</h3>
+            <span class="product-weight">উচ্চতা: ৩-৪ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ২৫০</span>
+                <span class="old-price">৳ ৩০০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>আমাদের আবহাওয়ায় শতভাগ মানিয়ে নেওয়ার ক্ষমতা</li>
+                <li>কম পরিচর্যা ও কম খরচে ভালো ফলন</li>
+                <li>বাড়ির আঙিনা বা ওয়ালের পাশে লাগানোর উপযোগী</li>
+                <li>দীর্ঘস্থায়ী ও শক্ত লতাযুক্ত গাছ</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('সহজ চাষযোগ্য দেশি আঙ্গুর গাছের চারা - ৩-৪ ফুট', 250)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    </div>
+</div>
+</section>
+
+<section id="ful" class="about-section-wrapper">
+
+    <!-- 1. Page Banner -->
+    <div class="about-banner">
+        <div class="about-container">
+            <h1>ফুলের চারা গাছ সমূহ</h1>
+        </div>
+    </div>
+    </section>
+
+
+
+                  <section id="products9" class="products-section product-section-box">
+        <div class="container">
+            <h2 class="section-title">গোলাপ গাছের চারা</h2>
+
+            <div class="product-grid">
+
+  <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box"><img src="english-rose.jpg" alt="ইংলিশ রোজ গাছ"></div>
+            <span class="product-tag">Rose Plant</span>
+            <h3 class="product-title">প্রিমিয়াম ইংলিশ রোজ গাছ</h3>
+            <span class="product-weight">উচ্চতা: ১.৫-২.৫ ফুট</span>
+            <div class="product-price"><span class="current-price">৳ ২৫০</span><span class="old-price">৳ ৩০০</span></div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>বড় ও চমৎকার পেস্টেল রঙের ফুল</li>
+                <li>মনোরম ও মিষ্টি সুবাসযুক্ত</li>
+                <li>ছাদ বাগান বা টবের জন্য সেরা</li>
+                <li>উন্নত মানের গ্রাফটেড চারা</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('ইংলিশ রোজ গাছ - ১.৫-২.৫ ফুট', 250)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box"><img src="button-rose.jpg" alt="বোতাম গোলাপ গাছ"></div>
+            <span class="product-tag">Rose Plant</span>
+            <h3 class="product-title">বোতাম গোলাপ</h3>
+            <span class="product-weight">উচ্চতা: ১-১.৫ ফুট</span>
+            <div class="product-price"><span class="current-price">৳ ১২০</span><span class="old-price">৳ ১৫০</span></div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>ছোট কিন্তু অসংখ্য থোকা ফুল ফোটে</li>
+                <li>গাছ পুরো ফুলে ভরে থাকে</li>
+                <li>ছোট টব বা বারান্দার উপযোগী</li>
+                <li>কম পরিচর্যা লাগে</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('বোতাম গোলাপ গাছ - ১-১.৫ ফুট', 120)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box"><img src="black-prince-rose.jpg" alt="কালো গোলাপ গাছ"></div>
+            <span class="product-tag">Rose Plant</span>
+            <h3 class="product-title">ব্ল্যাক প্রিন্স গোলাপ গাছ</h3>
+            <span class="product-weight">উচ্চতা: ১.৫-২ ফুট</span>
+            <div class="product-price"><span class="current-price">৳ ২৮০</span><span class="old-price">৳ ৩৪০</span></div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>গভীর লাল রঙের জন্য কালো দেখায়</li>
+                <li>শৌখিন বাগান মালিকদের পছন্দ</li>
+                <li>চমৎকার সুবাস ও পাপড়ির বিন্যাস</li>
+                <li>উন্নত জাতের গ্রাফটেড চারা</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('ব্ল্যাক প্রিন্স গোলাপ গাছ - ১.৫-২ ফুট', 280)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box"><img src="peace-rose.jpg" alt="শান্তি গোলাপ গাছ"></div>
+            <span class="product-tag">Rose Plant</span>
+            <h3 class="product-title">হলুদ (Peace) গোলাপ গাছ</h3>
+            <span class="product-weight">উচ্চতা: ১.৫-২.৫ ফুট</span>
+            <div class="product-price"><span class="current-price">৳ ২২০</span><span class="old-price">৳ ২৬০</span></div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>পাপড়ির কিনারে গোলাপি আভার হলুদ রঙ</li>
+                <li>বড় সাইজের আকর্ষণীয় ফুল</li>
+                <li>ছাদ বাগানের সৌন্দর্য বহুগুণ বাড়ায়</li>
+                <li>দ্রুত বর্ধনশীল কলম চারা</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('পিস গোলাপ গাছ - ১.৫-২.৫ ফুট', 220)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+</div>
+</div>
+</section>
+
+
+    <section id="products10" class="products-section product-section-box">
+       <div class="container">
+       <h2 class="section-title">গাঁদা ফুল গাছ</h2>
+          <div class="product-grid">
+
+   <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="china-marigold.jpg" alt="চায়না গাঁদা ফুল গাছ">
+            </div>
+            <span class="product-tag">Marigold Plant</span>
+            <h3 class="product-title">বড় বল আকৃতির চায়না গাঁদা ফুল</h3>
+            <span class="product-weight">উচ্চতা: ১-১.৫ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ৮০</span>
+                <span class="old-price">৳ ১০০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>ফুটবল আকৃতির বড় ও ঘন পাপড়ির ফুল</li>
+                <li>গাঢ় হলুদ ও কমলা রঙে বাগান ভরিয়ে রাখে</li>
+                <li>ছাদ বাগান বা টবের জন্য অত্যন্ত উপযোগী</li>
+                <li>খুব সহজেই নতুন কুঁড়ি ও ফুল আসে</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('বড় বল আকৃতির চায়না গাঁদা ফুল গাছ - ১-১.৫ ফুট', 80)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ২. আফ্রিকান গাঁদা ফুল গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="african-marigold.jpg" alt="আফ্রিকান গাঁদা ফুল গাছ">
+            </div>
+            <span class="product-tag">Marigold Plant</span>
+            <h3 class="product-title">হলুদ আফ্রিকান গাঁদা গাছের চারা</h3>
+            <span class="product-weight">উচ্চতা: ১.৫-২ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ৯০</span>
+                <span class="old-price">৳ ১২০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>আকারে বেশ বড় ও আকর্ষণীয় ফুল</li>
+                <li>গাছের উচ্চতা অন্যান্য জাতের চেয়ে একটু বেশি হয়</li>
+                <li>দীর্ঘ সময় ধরে গাছে ফুল তাজা থাকে</li>
+                <li>সরাসরি মাটিতে বা বড় টবে দারুণ বাড়ে</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('উজ্জ্বল হলুদ আফ্রিকান গাঁদা গাছের চারা - ১.৫-২ ফুট', 90)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ৩. ফ্রেঞ্চ গাঁদা ফুল গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="french-marigold.jpg" alt="ফ্রেঞ্চ গাঁদা ফুল গাছ">
+            </div>
+            <span class="product-tag">Marigold Plant</span>
+            <h3 class="product-title">দ্বি-রঙা ফ্রেঞ্চ গাঁদা ফুল গাছ</h3>
+            <span class="product-weight">উচ্চতা: ০.৫-১ ফুট </span>
+            <div class="product-price">
+                <span class="current-price">৳ ৭০</span>
+                <span class="old-price">৳ ৯০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>লাল ও হলুদ রঙের চমৎকার মিশ্রণযুক্ত ফুল</li>
+                <li>গাছ ঝোপালো প্রকৃতির ও কম উচ্চতার হয়</li>
+                <li>টবের চারপাশ সাজানোর জন্য আদর্শ</li>
+                <li>অল্প পরিচর্যাতেই প্রচুর ফুল ফোটে</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('দ্বি-রঙা আকর্ষণীয় ফ্রেঞ্চ গাঁদা ফুল গাছ - ০.৫-১ ফুট', 70)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+
+    <!-- ৫. হাইব্রিড মাল্টি-কালার গাঁদা গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="hybrid-marigold.jpg" alt="হাইব্রিড গাঁদা ফুল গাছ">
+            </div>
+            <span class="product-tag">Marigold Plant</span>
+            <h3 class="product-title">হাইব্রিড মাল্টি-কালার গাঁদা গাছ</h3>
+            <span class="product-weight">উচ্চতা: ১-১.৫ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ১০০</span>
+                <span class="old-price">৳ ১৩০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>একাধিক রঙের মিশ্রণে শৌখিন জাত</li>
+                <li>বড় ও দীর্ঘস্থায়ী পাপড়ির সমাহার</li>
+                <li>শখের বাগান মালিকদের প্রথম পছন্দ</li>
+                <li>উন্নত মানের স্বাস্থ্যকর চারা</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('আমদানিকৃত হাইব্রিড মাল্টি-কালার গাঁদা গাছ - ১-১.৫ ফুট', 100)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ৬. দেশি বা সাধারণ গাঁদা গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="desi-marigold.jpg" alt="দেশি গাঁদা ফুল গাছ">
+            </div>
+            <span class="product-tag">Marigold Plant</span>
+            <h3 class="product-title"> দেশি গাঁদা ফুলের চারা</h3>
+            <span class="product-weight">উচ্চতা: ১-১.৫ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ৬০</span>
+                <span class="old-price">৳ ৮০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>দেশীয় আবহাওয়ায় শতভাগ মানিয়ে নেয়</li>
+                <li>তীব্র সুগন্ধযুক্ত ও প্রচুর ফুল দেয়</li>
+                <li>কোনো বিশেষ যত্নের প্রয়োজন হয় না</li>
+                <li>খুব কম মূল্যে দারুণ বাগানের অনুভূতি</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('সহজ চাষযোগ্য দেশি গাঁদা ফুলের চারা - ১-১.৫ ফুট', 60)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+</div>
+</div>
+</section>
+
+
+  <section id="products11" class="products-section product-section-box">
+       <div class="container">
+       <h2 class="section-title">রজনীগন্ধা ফুল গাছ</h2>
+          <div class="product-grid">
+
+<div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="single-tuberose.jpg" alt="সিঙ্গেল পেটাল রজনীগন্ধা গাছ">
+            </div>
+            <span class="product-tag">Tuberose Plant</span>
+            <h3 class="product-title">সিঙ্গেল পেটাল রজনীগন্ধা বাল্ব</h3>
+            <span class="product-weight">প্যাকেজ: ৫টি স্বাস্থ্যকর বাল্ব</span>
+            <div class="product-price">
+                <span class="current-price">৳ ১৫০</span>
+                <span class="old-price">৳ ১৮০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>এক সারির পাপড়ি বিশিষ্ট অত্যন্ত সুগন্ধি ফুল</li>
+                <li>রাত নামলেই চারপাশ মিষ্টি গন্ধে মাত করে দেয়</li>
+                <li>কাট ফ্লাওয়ার ও তোড়া তৈরির জন্য সেরা পছন্দ</li>
+                <li>সহজে টব বা মাটিতে রোপণ করা যায়</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('তীব্র সুগন্ধযুক্ত সিঙ্গেল পেটাল রজনীগন্ধা বাল্ব - ৫ পিস', 150)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ২. ডাবল পেটাল বা থোকা রজনীগন্ধা বাল্ব -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="double-tuberose.jpg" alt="ডাবল পেটাল রজনীগন্ধা গাছ">
+            </div>
+            <span class="product-tag">Tuberose Plant</span>
+            <h3 class="product-title">ঘন পাপড়ির ডাবল পেটাল রজনীগন্ধা বাল্ব</h3>
+            <span class="product-weight">প্যাকেজ: ৫টি স্বাস্থ্যকর বাল্ব</span>
+            <div class="product-price">
+                <span class="current-price">৳ ২০০</span>
+                <span class="old-price">৳ ২৪০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>একাধিক স্তরের ঘন পাপড়ির আকর্ষণীয় স্টিক</li>
+                <li>ফুল অনেক বেশি সময় পর্যন্ত সতেজ ও তাজা থাকে</li>
+                <li>শৌখিন বাগান মালিকদের কাছে দারুণ জনপ্রিয়</li>
+                <li>উন্নত মানের পরিপক্ক কন্দ বা বাল্ব</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('ঘন পাপড়ির ডাবল পেটাল রজনীগন্ধা বাল্ব - ৫ পিস', 200)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ৩. পিংক বা গোলাপি রজনীগন্ধা বাল্ব -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="pink-tuberose.jpg" alt="গোলাপি রজনীগন্ধা গাছ">
+            </div>
+            <span class="product-tag">Tuberose Plant</span>
+            <h3 class="product-title">দুর্লভ গোলাপি রঙের রজনীগন্ধা বাল্ব</h3>
+            <span class="product-weight">প্যাকেজ: ৩টি স্বাস্থ্যকর বাল্ব</span>
+            <div class="product-price">
+                <span class="current-price">৳ ২৩০</span>
+                <span class="old-price">৳ ২৮০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>নজরকাড়া আকর্ষণীয় গোলাপি রঙের ফুল</li>
+                <li>সাধারণ সাদা রজনীগন্ধার চেয়ে কিছুটা ভিন্ন ও শৌখিন</li>
+                <li>ছাদ বাগান ও টবের সৌন্দর্য বৃদ্ধি করতে দারুণ</li>
+                <li>উন্নত ও পরিপক্ক আমদানিকৃত বাল্ব</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('দুর্লভ গোলাপি রঙের রজনীগন্ধা বাল্ব - ৩ পিস', 230)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ৪. হাইব্রিড রজনীগন্ধা চারা -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="hybrid-tuberose.jpg" alt="হাইব্রিড রজনীগন্ধা চারা">
+            </div>
+            <span class="product-tag">Tuberose Plant</span>
+            <h3 class="product-title">হাইব্রিড রজনীগন্ধা গাছের চারা</h3>
+            <span class="product-weight">উচ্চতা: ১-১.৫ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ২২০</span>
+                <span class="old-price">৳ ২৬০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>বড় সাইজের স্টিক ও চমৎকার ফুলের সমাহার</li>
+                <li>টব বা ছাদ বাগানের জন্য বিশেষভাবে উপযোগী</li>
+                <li>খুব দ্রুত ফুল ফোটাতে শুরু করে</li>
+                <li>স্বাস্থ্যকর ও শক্তিশালী শেকড়যুক্ত চারা</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('আমদানিকৃত হাইব্রিড রজনীগন্ধা গাছের চারা - ১-১.৫ ফুট', 220)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+</div>
+</div>
+</section>
+
+
+
+<section id="products12" class="products-section product-section-box">
+       <div class="container">
+       <h2 class="section-title">জবা ফুল গাছ</h2>
+          <div class="product-grid">
+
+<div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="lokkhi-joba.jpg" alt="রক্ত জবা ফুল গাছ">
+            </div>
+            <span class="product-tag">Joba Plant</span>
+            <h3 class="product-title">লাল রঙের দেশি রক্ত জবা গাছ</h3>
+            <span class="product-weight">উচ্চতা: ১.৫-২ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ১২০</span>
+                <span class="old-price">৳ ১৫০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>উজ্জ্বল লাল রঙের ঐতিহ্যবাহী পাঁচ পাপড়ির ফুল</li>
+                <li>সারাবছর নিয়মিত প্রচুর পরিমাণে ফুল ফোটে</li>
+                <li>দেশীয় আবহাওয়ায় অত্যন্ত শক্ত ও সহজে বর্ধনশীল</li>
+                <li>ছাদ বাগান বা বাড়ির আঙিনার জন্য সেরা পছন্দ</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('উজ্জ্বল লাল রঙের দেশি রক্ত জবা গাছ - ১.৫-২ ফুট', 120)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ২. থাই বা মাল্টি-পেটাল হাইব্রিড জবা -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="thai-hibiscus.jpg" alt="থাই হাইব্রিড জবা ফুল গাছ">
+            </div>
+            <span class="product-tag">Joba Plant</span>
+            <h3 class="product-title">থাই মাল্টি-পেটাল হাইব্রিড জবা</h3>
+            <span class="product-weight">উচ্চতা: ১-১.৫ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ২৫০</span>
+                <span class="old-price">৳ ৩০০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>বড় আকৃতির ও ঘন থোকা থোকা পাপড়ির আকর্ষণীয় ফুল</li>
+                <li>গোলাপি, হলুদ কিংবা মিশ্র রঙের প্রিমিয়াম ভ্যারাইটি</li>
+                <li>টবে চাষ করার জন্য অত্যন্ত উপযোগী ও চমৎকার</li>
+                <li>উন্নত মানের গ্রাফটেড ও স্বাস্থ্যকর চারা</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('আমদানিকৃত থাই মাল্টি-পেটাল হাইব্রিড জবা - ১-১.৫ ফুট', 250)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ৩. হলুদ জবা বা পুতুল জবা -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="yellow-hibiscus.jpg" alt="হলুদ জবা ফুল গাছ">
+            </div>
+            <span class="product-tag">Joba Plant</span>
+            <h3 class="product-title">হলুদ রঙের জবা গাছের চারা</h3>
+            <span class="product-weight">উচ্চতা: ১.৫-২ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ১৮০</span>
+                <span class="old-price">৳ ২২০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>মনোরম হলুদ রঙের পাপড়ি ও মাঝখানে স্পষ্ট রেনু</li>
+                <li>গাছ ঝোপালো প্রকৃতির হওয়ায় দেখতে দারুণ লাগে</li>
+                <li>খুব সহজেই নতুন কুঁড়ি ও ফুল ধরতে শুরু করে</li>
+                <li>অল্প পরিচর্যাতেই সুন্দর বেড়ে ওঠে</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('সতেজ হলুদ রঙের সুন্দর জবা গাছের চারা - ১.৫-২ ফুট', 180)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+
+</div>
+</div>
+</section>
+
+
+<section id="products13" class="products-section product-section-box">
+       <div class="container">
+       <h2 class="section-title">বেলি ফুল গাছ</h2>
+          <div class="product-grid">
+
+
+<div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="desi-beli.jpg" alt="দেশি বেলি ফুল গাছ">
+            </div>
+            <span class="product-tag">Beli Plant</span>
+            <h3 class="product-title">দেশি বেলি ফুল গাছের চারা</h3>
+            <span class="product-weight">উচ্চতা: ১.৫-২ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ১৫০</span>
+                <span class="old-price">৳ ১৮০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>অত্যন্ত মিষ্টি ও তীব্র সুগন্ধযুক্ত সাদা ফুল</li>
+                <li>সারাবছর নিয়মিত প্রচুর পরিমাণে ফুল ফোটে</li>
+                <li>দেশীয় আবহাওয়ায় খুব দ্রুত বেড়ে ওঠে</li>
+                <li>ছাদ বাগান বা বাড়ির বারান্দার জন্য সেরা পছন্দ</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('তীব্র সুগন্ধযুক্ত দেশি বেলি ফুল গাছের চারা - ১.৫-২ ফুট', 150)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+    <!-- ২. আরাবেলি বা মাল্টি-পেটাল (ডাবল) বেলি ফুল গাছ -->
+    <div class="product-card">
+        <div class="product-details">
+            <div class="product-img-box">
+                <img src="double-beli.jpg" alt="ডাবল বেলি ফুল গাছ">
+            </div>
+            <span class="product-tag">Beli Plant</span>
+            <h3 class="product-title">ঘন পাপড়ির ডাবল বেলি ফুল গাছ</h3>
+            <span class="product-weight">উচ্চতা: ১-১.৫ ফুট</span>
+            <div class="product-price">
+                <span class="current-price">৳ ২০০</span>
+                <span class="old-price">৳ ২৪০</span>
+            </div>
+        </div>
+        <div class="product-hover-info">
+            <h4>পণ্যের বিবরণ</h4>
+            <ul>
+                <li>একাধিক স্তরের ঘন পাপড়ির চমৎকার আকর্ষণীয় ফুল</li>
+                <li>ফুলগুলো আকারে কিছুটা বড় হয় এবং দীর্ঘসময় সতেজ থাকে</li>
+                <li>টব বা ড্রামে চাষ করার জন্য অত্যন্ত উপযোগী</li>
+                <li>উন্নত মানের স্বাস্থ্যকর ও শেকড়যুক্ত কলম চারা</li>
+            </ul>
+        </div>
+        <button onclick="addToCart('ঘন পাপড়ির থোকা থোকা ডাবল বেলি ফুল গাছ - ১-১.৫ ফুট', 200)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+    </div>
+
+
+</div>
+</div>
+</section>
+
+<section id="indoor" class="about-section-wrapper">
+
+    <!-- 1. Page Banner -->
+    <div class="about-banner">
+        <div class="about-container">
+            <h1>ইনডোর প্ল্যান্টসমূহ</h1>
+        </div>
+    </div>
+    </section>
+
+
+<section id="products14" class="products-section product-section-box">
+       <div class="container">
+       <h2 class="section-title">ইনডোর প্ল্যান্ট</h2>
+          <div class="product-grid">
+
+<div class="product-card">
+    <div class="product-details">
+        <div class="product-img-box">
+            <img src="snake-plant.jpg" alt="স্নেক প্ল্যান্ট">
+        </div>
+        <span class="product-tag">Snake Plant</span>
+        <h3 class="product-title">স্নেক প্ল্যান্ট বা মাদার্স টাং</h3>
+        <span class="product-weight">উচ্চতা: ১-১.৫ ফুট</span>
+        <div class="product-price">
+            <span class="current-price">৳ ২৫০</span>
+            <span class="old-price">৳ ৩০০</span>
+        </div>
+    </div>
+    <div class="product-hover-info">
+        <h4>পণ্যের বিবরণ</h4>
+        <ul>
+            <li>অল্প আলো ও কম পানিতে দারুণভাবে বেঁচে থাকে</li>
+            <li>ঘরের বাতাস প্রাকৃতিকভাবে বিশুদ্ধ করে</li>
+            <li>বিগিনার বা নতুন ছাদবাগানিদের জন্য সেরা পছন্দ</li>
+            <li>অফিস টেবিল বা বেডরুমের সৌন্দর্য বাড়ায়</li>
+        </ul>
+    </div>
+    <button onclick="addToCart('স্নেক প্ল্যান্ট বা মাদার্স টাং - ১-১.৫ ফুট', 250)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+</div>
+
+<div class="product-card">
+    <div class="product-details">
+        <div class="product-img-box">
+            <img src="money-plant.jpg" alt="মানিপ্ল্যান্ট গাছ">
+        </div>
+        <span class="product-tag">Money Plant</span>
+        <h3 class="product-title">সবুজ মানিপ্ল্যান্ট লতা</h3>
+        <span class="product-weight">উচ্চতা: ৮-১২ ইঞ্চি</span>
+        <div class="product-price">
+            <span class="current-price">৳ ১২০</span>
+            <span class="old-price">৳ ১৫০</span>
+        </div>
+    </div>
+    <div class="product-hover-info">
+        <h4>পণ্যের বিবরণ</h4>
+        <ul>
+            <li>মাটি ও পানি উভয় মাধ্যমেই খুব সহজে বেড়ে ওঠে</li>
+            <li>অন্দরসজ্জা ও ঝুলন্ত টবের জন্য চমৎকার</li>
+            <li>পরিবেশের ক্ষতিকারক টক্সিন দূর করে</li>
+            <li>খুব সহজেই নতুন ডাল গজায় ও যত্ন নেওয়া সহজ</li>
+        </ul>
+    </div>
+    <button onclick="addToCart('সবুজ মানিপ্ল্যান্ট লতা - ৮-১২ ইঞ্চি', 120)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+</div>
+
+<div class="product-card">
+    <div class="product-details">
+        <div class="product-img-box">
+            <img src="zz-plant.jpg" alt="জেডজেড প্ল্যান্ট">
+        </div>
+        <span class="product-tag">ZZ Plant</span>
+        <h3 class="product-title">জেডজেড ইনডোর প্ল্যান্ট</h3>
+        <span class="product-weight">উচ্চতা: ১ ফুট</span>
+        <div class="product-price">
+            <span class="current-price">৳ ৩৫০</span>
+            <span class="old-price">৳ ৪০০</span>
+        </div>
+    </div>
+    <div class="product-hover-info">
+        <h4>পণ্যের বিবরণ</h4>
+        <ul>
+            <li>অন্ধকার বা কম আলোযুক্ত ঘরেও সহজে টিকে থাকে</li>
+            <li>মাসে মাত্র ১-২ বার পানি দিলেই চলে</li>
+            <li>উজ্জ্বল ও চকচকে পাতা ঘরের সৌন্দর্য বহুগুণ বাড়িয়ে দেয়</li>
+            <li>দীর্ঘ সময় পানি ছাড়া বেঁচে থাকার অসাধারণ ক্ষমতা আছে</li>
+        </ul>
+    </div>
+    <button onclick="addToCart('জেডজেড ইনডোর প্ল্যান্ট - ১ ফুট', 350)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+</div>
+
+<div class="product-card">
+    <div class="product-details">
+        <div class="product-img-box">
+            <img src="peace-lily.jpg" alt="পিস লিলি গাছ">
+        </div>
+        <span class="product-tag">Peace Lily</span>
+        <h3 class="product-title">সাদা ফুলসহ পিস লিলি গাছ</h3>
+        <span class="product-weight">উচ্চতা: ১-১.৫ ফুট</span>
+        <div class="product-price">
+            <span class="current-price">৳ ২৮০</span>
+            <span class="old-price">৳ ৩৫০</span>
+        </div>
+    </div>
+    <div class="product-hover-info">
+        <h4>পণ্যের বিবরণ</h4>
+        <ul>
+            <li>নাসার গবেষণা অনুযায়ী সেরা বাতাস বিশুদ্ধকারী গাছ</li>
+            <li>ছায়াযুক্ত ও ঠান্ডা স্থানে খুব ভালো বাড়ে</li>
+            <li>আকর্ষণীয় সাদা ফুল ঘরের পরিবেশ স্নিগ্ধ রাখে</li>
+            <li>মাটি সামান্য শুকিয়ে গেলে নিয়মিত পানি দিতে হয়</li>
+        </ul>
+    </div>
+    <button onclick="addToCart('সাদা ফুলসহ পিস লিলি গাছ - ১-১.৫ ফুট', 280)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+</div>
+
+<div class="product-card">
+    <div class="product-details">
+        <div class="product-img-box">
+            <img src="monstera.jpg" alt="মনস্টেরা প্ল্যান্ট">
+        </div>
+        <span class="product-tag">Monstera Plant</span>
+        <h3 class="product-title">মনস্টেরা ডেলিচিওসা (সুইস চিজ প্ল্যান্ট)</h3>
+        <span class="product-weight">উচ্চতা: ১.৫-২ ফুট</span>
+        <div class="product-price">
+            <span class="current-price">৳ ৫৫০</span>
+            <span class="old-price">৳ ৬৫০</span>
+        </div>
+    </div>
+    <div class="product-hover-info">
+        <h4>পণ্যের বিবরণ</h4>
+        <ul>
+            <li>আধুনিক ইন্টেরিয়র ডিজাইনে সবচেয়ে জনপ্রিয়</li>
+            <li>পাতার সুন্দর ও ইউনিক ডিজাইনের জন্য বিখ্যাত</li>
+            <li>পরোক্ষ সূর্যের আলো ও আর্দ্র পরিবেশ পছন্দ করে</li>
+            <li>ড্রয়িং রুম বা স্টাডি রুমের আভিজাত্য বাড়িয়ে দেয়</li>
+        </ul>
+    </div>
+    <button onclick="addToCart('মনস্টেরা ডেলিচিওসা - ১.৫-২ ফুট', 550)" class="add-to-cart-btn">কার্টে যোগ করুন</button>
+</div>
+
+
+</div>
+</div>
+</section>
+
+
+
+
+
+<section id="about" class="about-section-wrapper">
+
+    <!-- 1. Page Banner -->
+    <div class="about-banner">
+        <div class="about-container">
+            <h1>আমাদের সম্পর্কে জেনে নিন</h1>
+            <p>১০০% আসল ও বেশি ফলনদায়ক গাছের বিশ্বস্ত ঠিকানা — SR কৃষি & নার্সারি </p>
+        </div>
+    </div>
+
+  <!-- 2. Story Section -->
+    <div class="about-story">
+        <div class="about-container">
+            <div class="about-grid-2">
+                <div class="about-text">
+                    <h2>আমরা কীভাবে কাজ করি?</h2>
+                    <p>সবুজ শ্যামল প্রকৃতি আর স্বাস্থ্যকর পরিবেশ গড়ার স্বপ্ন নিয়ে "SR কৃষি ও নার্সারি" যাত্রা শুরু করেছে। আমরা বিশ্বাস করি, একটি সুস্থ জীবনের জন্য সবুজের ছোঁয়া অপরিহার্য। তাই আমরা শুধুমাত্র চারা বা গাছ বিক্রি করি না, বরং আপনার শখের বাগানকে প্রাণবন্ত করে তোলার জন্য সঠিক পরামর্শ ও উন্নত মানের উপকরণ পৌঁছে দেই।</p>
+                    <p>আমাদের সংগ্রহে রয়েছে দেশি-বিদেশি উন্নত জাতের ফলের চারা, দুর্লভ ফুলের চারা ও ইনডোর প্ল্যান্টস। অভিজ্ঞ মালিদের নিবিড় পরিচর্যায় প্রতিটি চারা বড় করা হয়, যাতে আপনার বাগানে রোপণের সাথে সাথেই তা দ্রুত বেড়ে ওঠে। কোনো প্রকার ভেজালহীন জৈব সার ও উন্নতমানের চারা সরবরাহ করে আমরা আপনার বাগানের দীর্ঘস্থায়ী সৌন্দর্য নিশ্চিত করছি।</p>
+                </div>
+                <div class="about-img">
+                    <img src="about img.jpg" alt="এস আর কৃষি ও নার্সারি">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Mission & Vision -->
+    <div class="about-values">
+        <div class="about-container">
+            <h2 class="about-title">আমাদের মূল লক্ষ্য ও উদ্দেশ্য</h2>
+            <div class="about-card-grid">
+                
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3>আমাদের লক্ষ্য (Mission)</h3>
+                    <p>প্রতিটি বাড়ির আঙিনা ও ছাদকে সবুজে সাজিয়ে তোলা এবং ভেজালমুক্ত মানসম্মত গাছের চারা সবার হাতের নাগালে পৌঁছে দেওয়া।</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <h3>আমাদের ভিশন (Vision)</h3>
+                    <p>সবুজায়ন আন্দোলনে নেতৃত্ব দেওয়া এবং দেশের সবচেয়ে বিশ্বস্ত ও মানসম্মত নার্সারি প্রতিষ্ঠান হিসেবে নিজেকে প্রতিষ্ঠিত করা।</p>
+                </div>
+
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3>গুণগত মানের নিশ্চয়তা</h3>
+                    <p>আমরা প্রতিটি চারা স্বাস্থ্য পরীক্ষা ও সঠিক পরিচর্যার মাধ্যমে প্রস্তুত করি, যা আপনার বাগানে দ্রুত ফলন ও ফুল ফোটানোর শতভাগ নিশ্চয়তা দেয়।</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer id="about">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#"> <!-- আপনার হোমপেইজের লিংক দিন -->
+        <img src="nur.png" alt="SR কৃষি & নার্সারি" class="footer-logo">
+    </a>
+                    <p class="footer-text">নিরাপদ খাদ্য পৌঁছে যাক প্রতিটি পরিবারের ঘরে। আমরা শতভাগ ভেজালমুক্ত ও অর্গানিক পণ্যের নিশ্চয়তা প্রদান করি।</p>
+                </div>
+                <div class="footer-contact">
+                    <h4 class="footer-title">যোগাযোগ</h4>
+                    <p><i class="fa-solid fa-location-dot"></i>নাটোর বেলঘড়িয়া বাইপাস</p>
+                    <p><i class="fa-solid fa-phone"></i> +8801728135873</p>
+                    <p><i class="fa-solid fa-envelope"></i>sifatislamsifat740@gmail.com</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">সোশ্যাল মিডিয়া</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 SR কৃষি & নার্সারি All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Bottom Navbar for Mobile -->
+    <div class="mobile-bottom-bar">
+        <div class="mobile-bottom-content">
+            <a href="#" class="mobile-bottom-item">
+                <i class="fa-solid fa-house"></i>
+                <span>হোম</span>
+            </a>
+            <button onclick="toggleMobileSideMenu()" class="mobile-bottom-item">
+                <i class="fa-solid fa-bars"></i>
+                <span>মেনু</span>
+            </button>
+            <button onclick="toggleCart()" class="mobile-bottom-item" style="position:relative;">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span id="cart-count-bottom" style="position:absolute; top:-12px; right:22px; background:#111827; color:white; font-size:9px; width:16px; height:16px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:1px solid #f97316;">0</span>
+                <span>কার্ট</span>
+            </button>
+            
+        </div>
+    </div>
+
+    <!-- Cart Drawer Modal -->
+    <div id="cart-drawer" class="cart-modal">
+        <div class="cart-drawer-content">
+            <div>
+                <div class="cart-header">
+                    <h3 style="font-weight:700; font-size:18px;">আপনার শপিং কার্ট</h3>
+                    <button onclick="toggleCart()" style="color:#6b7280; font-size:20px;"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div id="cart-items" class="cart-items-container">
+                    <p style="color:#6b7280; font-size:14px; text-align:center; padding: 32px 0;">কার্ট খালি আছে!</p>
+                </div>
+
+                <div id="checkout-form" class="cart-form hidden">
+                    <h4 style="font-weight:600; font-size:14px; margin-bottom:8px; color:#9a3412;">ডেলিভারির তথ্য দিন:</h4>
+                    <div>
+                        <input type="text" id="cust-name" placeholder="আপনার নাম">
+                        <input type="text" id="cust-phone" placeholder="মোবাইল নম্বর">
+                        <textarea id="cust-address" placeholder="পূর্ণ ঠিকানা (বাসা নং, রোড, এলাকা)" style="height:64px;"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cart-footer">
+                <div class="cart-total-row">
+                    <span>মোট:</span>
+                    <span id="cart-total">৳ ০</span>
+                </div>
+                <button onclick="proceedToCheckout()" id="checkout-btn" class="btn-confirm">
+    <i class="fa-brands fa-whatsapp" style="margin-right: 8px; font-size: 18px;"></i> হোয়াটসঅ্যাপে অর্ডার পাঠান
+</button>
+            </div>
+        </div>
+    </div>
+
+ <button id="backToTop" class="back-to-top-btn" title="Go to top">
+    <i class="fa-solid fa-chevron-up"></i>
+</button>
+
+
+
+    <!-- Script Functions -->
+    <script>
+      let cart = [];
+const myWhatsAppNumber = "8801332561231";
+
+function toggleCart() {
+    const modal = document.getElementById('cart-drawer'); // আপনার HTML-এ যদি আইডি cart-drawer হয়
+    if (modal) {
+        modal.classList.toggle('open');
+    }
+}
+// Side Drawer Toggle
+function toggleMobileSideMenu() {
+    const menu = document.getElementById('side-menu');
+    const overlay = document.getElementById('side-menu-overlay');
+
+    if (menu) menu.classList.toggle('active');
+    if (overlay) overlay.classList.toggle('active');
+}
+
+// Smooth Accordion Toggle Function for Mobile Category
+function toggleMobileCategory() {
+    const catMenu = document.getElementById('mobile-cat-dropdown');
+    const icon = document.getElementById('mobile-cat-icon');
+    
+    if (catMenu) catMenu.classList.toggle('open');
+    if (icon) icon.classList.toggle('rotate-180');
+}
+// Smooth Accordion Toggle Function for Mobile Category
+function toggleMobileCategor() {
+    const catMenu = document.getElementById('mobile-ca-dropdown');
+    const icon = document.getElementById('mobile-ca-icon');
+    
+    if (catMenu) catMenu.classList.toggle('open');
+    if (icon) icon.classList.toggle('rotate-180');
+}
+
+function addToCart(name, price) {
+    cart.push({ name, price });
+    updateCartUI();
+    
+    // কার্ট মোডালটি অ্যানিমেশন হয়ে সাথে সাথে ওপেন হয়ে যাবে
+    const cartModal = document.getElementById('cart-drawer');
+    if (cartModal) {
+        cartModal.classList.add('open');
+    }
+}
+
+function updateCartUI() {
+    const cartCountTop = document.getElementById('cart-count-top');
+    const cartCountBottom = document.getElementById('cart-count-bottom');
+    const floatingCartCount = document.getElementById('floating-cart-count');
+    const floatingCartTotal = document.getElementById('floating-cart-total');
+    const cartItems = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+    const checkoutForm = document.getElementById('checkout-form');
+    const checkoutBtn = document.getElementById('checkout-btn');
+
+    const totalItems = cart.length;
+    if (cartCountTop) cartCountTop.innerText = totalItems;
+    if (cartCountBottom) cartCountBottom.innerText = totalItems;
+    if (floatingCartCount) floatingCartCount.innerText = totalItems + " Items";
+
+    if (totalItems === 0) {
+        if (cartItems) cartItems.innerHTML = '<p style="color:#6b7280; font-size:14px; text-align:center; padding: 32px 0;">কার্ট খালি আছে!</p>';
+        if (cartTotal) cartTotal.innerText = '৳ ০';
+        if (floatingCartTotal) floatingCartTotal.innerText = '৳ 0.00';
+        if (checkoutForm) checkoutForm.classList.add('hidden');
+        if (checkoutBtn) checkoutBtn.innerText = 'অর্ডার কনফার্ম করুন';
+        return;
+    }
+
+    let total = 0;
+    if (cartItems) {
+        cartItems.innerHTML = '';
+        cart.forEach((item, index) => {
+            total += item.price;
+            cartItems.innerHTML += `
+                <div class="cart-item-row">
+                    <div>
+                        <h4 style="font-size:14px; font-weight:600;">${item.name}</h4>
+                        <p style="font-size:12px; color:#6b7280;">৳ ${item.price}</p>
+                    </div>
+                    <button onclick="removeFromCart(${index})" style="color:#ef4444; font-size:14px;"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            `;
+        });
+    }
+
+    if (cartTotal) cartTotal.innerText = '৳ ' + total;
+    if (floatingCartTotal) floatingCartTotal.innerText = '৳ ' + total;
+    if (checkoutForm) checkoutForm.classList.remove('hidden');
+    if (checkoutBtn) checkoutBtn.innerText = 'হোয়াটসঅ্যাপে অর্ডার পাঠান';
+}
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCartUI();
+}
+
+function proceedToCheckout() {
+    if (cart.length === 0) return;
+
+    const name = document.getElementById('cust-name').value.trim();
+    const phone = document.getElementById('cust-phone').value.trim();
+    const address = document.getElementById('cust-address').value.trim();
+
+    if (!name || !phone || !address) {
+        alert('দয়া করে আপনার নাম, মোবাইল নম্বর এবং ঠিকানা পূরণ করুন!');
+        return;
+    }
+
+    let orderDetails = `*নতুন অর্ডার এসেছে!*%0A%0A`;
+    orderDetails += `*গ্রাহকের নাম:* ${name}%0A`;
+    orderDetails += `*মোবাইল নম্বর:* ${phone}%0A`;
+    orderDetails += `*ঠিকানা:* ${address}%0A%0A`;
+    orderDetails += `*পণ্যের তালিকা:*%0A`;
+
+    let total = 0;
+    cart.forEach((item, idx) => {
+        orderDetails += `${idx + 1}. ${item.name} - ৳${item.price}%0A`;
+        total += item.price;
+    });
+
+    orderDetails += `%0A*মোট মূল্য:* ৳${total}`;
+
+    const whatsappUrl = `https://wa.me/${myWhatsAppNumber}?text=${orderDetails}`;
+    window.open(whatsappUrl, '_blank');
+}
+
+// ইউনিভার্সাল ফিল্টার ফাংশন (পিসি, ট্যাব ও মোবাইল উভয়ের জন্য)
+function applyCustomFilter(searchInput) {
+    searchInput = searchInput.toLowerCase().trim();
+    const categorySections = document.querySelectorAll('.product-section-box');
+    let totalVisibleProducts = 0;
+
+    if (searchInput === "") {
+        resetSearchFilter();
+        return;
+    }
+
+    categorySections.forEach(section => {
+        const productCards = section.querySelectorAll('.product-card');
+        let hasVisibleProduct = false;
+
+        productCards.forEach(card => {
+            const cardText = card.innerText.toLowerCase();
+            
+            if (cardText.includes(searchInput)) {
+                card.style.display = ""; 
+                hasVisibleProduct = true;
+                totalVisibleProducts++;
+            } else {
+                card.style.display = "none"; 
+            }
+        });
+
+        if (hasVisibleProduct) {
+            section.style.display = "block";
+        } else {
+            section.style.display = "none";
+        }
+    });
+
+    handleNoProductMessage(totalVisibleProducts, searchInput);
+}
+
+// মেসেজ এবং নিচে সুন্দর "সব পণ্য দেখুন / আগের পেজে ফিরে যান" বাটন হ্যান্ডেল করার ফাংশন
+function handleNoProductMessage(count, searchInput) {
+    let msgContainer = document.getElementById('no-product-msg');
+
+    if (!msgContainer) {
+        msgContainer = document.createElement('div');
+        msgContainer.id = 'no-product-msg';
+        msgContainer.style.textAlign = "center";
+        msgContainer.style.padding = "25px 0";
+        msgContainer.style.fontSize = "16px";
+        msgContainer.style.color = "#6b7280";
+        
+        const firstSection = document.querySelector('[class^="products-section"]') || document.querySelector('.product-section-box');
+        if (firstSection) {
+            firstSection.parentNode.insertBefore(msgContainer, firstSection);
+        }
+    }
+
+    if (searchInput !== "") {
+        let contentHtml = '';
+        
+        if (count === 0) {
+            contentHtml += `<p style="margin-bottom: 15px; color: #ef4444; font-weight: 500;">দুঃখিত, কোনো পণ্য খুঁজে পাওয়া যায়নি!</p>`;
+        }
+
+        // প্রডাক্ট থাক বা না থাক, নীল রঙের বাটনটি সবসময় দেখাবে
+        contentHtml += `
+            <div style="margin-bottom: 10px;">
+                <button onclick="resetSearchFilter()" style="background: #2563eb; color: #ffffff; border: none; padding: 10px 22px; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);">
+                    <i class="fa-solid fa-arrow-left" style="margin-right: 6px;"></i> সব পণ্য দেখুন / আগের পেজে ফিরে যান
+                </button>
+            </div>
+        `;
+
+        msgContainer.innerHTML = contentHtml;
+        msgContainer.style.display = "block";
+    } else {
+        msgContainer.style.display = "none";
+    }
+}
+
+function resetSearchFilter() {
+    const desktopInput = document.getElementById("product-search");
+    const popupSearchInput = document.getElementById("popup-product-search");
+
+    if (desktopInput) desktopInput.value = "";
+    if (popupSearchInput) popupSearchInput.value = "";
+
+    const categorySections = document.querySelectorAll('.product-section-box');
+    categorySections.forEach(section => {
+        section.style.display = "block";
+        const productCards = section.querySelectorAll('.product-card');
+        productCards.forEach(card => {
+            card.style.display = "";
+        });
+    });
+
+    let msgContainer = document.getElementById('no-product-msg');
+    if (msgContainer) {
+        msgContainer.style.display = "none";
+    }
+
+    // যদি `#products2` সেকশনে স্মুথলি যেতে চান
+    const targetSection = document.getElementById('products2');
+    if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+
+
+// Back to Top Button Logic
+const backToTopBtn = document.querySelector('.back-to-top-btn');
+if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.style.display = 'flex';
+        } else {
+            backToTopBtn.style.display = 'none';
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+// Search Modal, Desktop Input & Enter Key Logic
+document.addEventListener("DOMContentLoaded", function() {
+    const searchIconBtn = document.getElementById("search-icon-btn");
+    const searchModal = document.getElementById("search-modal");
+    const searchCloseBtn = document.getElementById("search-close-btn");
+    const popupSearchInput = document.getElementById("popup-product-search");
+    const desktopInput = document.getElementById("product-search");
+
+    if (searchIconBtn && searchModal) {
+        searchIconBtn.addEventListener("click", function() {
+            searchModal.classList.add("active");
+            if (popupSearchInput) {
+                popupSearchInput.focus();
+            }
+        });
+    }
+
+    if (searchCloseBtn && searchModal) {
+        searchCloseBtn.addEventListener("click", function() {
+            searchModal.classList.remove("active");
+        });
+    }
+
+    if (searchModal) {
+        searchModal.addEventListener("click", function(e) {
+            if (e.target === searchModal) {
+                searchModal.classList.remove("active");
+            }
+        });
+    }
+
+    // পিসি/ট্যাব ইনপুট
+    if (desktopInput) {
+        desktopInput.addEventListener("input", function() {
+            applyCustomFilter(desktopInput.value);
+        });
+
+        desktopInput.addEventListener("keydown", function(e) {
+            if (e.key === "Enter") {
+                let currentSearchVal = desktopInput.value;
+                desktopInput.blur();
+                applyCustomFilter(currentSearchVal);
+            }
+        });
+    }
+
+    // মোবাইল পপআপ ইনপুট
+    if (popupSearchInput) {
+        popupSearchInput.addEventListener("keydown", function(e) {
+            if (e.key === "Enter") {
+                let currentSearchVal = popupSearchInput.value;
+                searchModal.classList.remove("active");
+                popupSearchInput.blur(); 
+                popupSearchInput.value = "";
+                if (desktopInput) desktopInput.value = "";
+                applyCustomFilter(currentSearchVal);
+            }
+        });
+    }
+});
+
+// ক্যাটাগরি মেনুতে ক্লিক করলে নির্দিষ্ট ক্যাটাগরি দেখানোর এবং সার্চ রিসেট করার ফাংশন
+function filterByCategory(categoryName) {
+    const desktopInput = document.getElementById("product-search");
+    const popupSearchInput = document.getElementById("popup-product-search");
+
+    // ইনপুট বক্স ফাকা করে দেওয়া
+    if (desktopInput) desktopInput.value = "";
+    if (popupSearchInput) popupSearchInput.value = "";
+
+    const categorySections = document.querySelectorAll('.product-section-box');
+    let totalVisibleProducts = 0;
+
+    categorySections.forEach(section => {
+        // সেকশনের নাম বা ক্যাটাগরির সাথে মিল আছে কি না চেক করা
+        const sectionTitle = section.querySelector('h2, h3, .section-title');
+        const titleText = sectionTitle ? sectionTitle.innerText.toLowerCase() : "";
+        const productCards = section.querySelectorAll('.product-card');
+
+        // যদি ক্যাটাগরির নাম মিলে যায়
+        if (titleText.includes(categoryName.toLowerCase())) {
+            section.style.display = "block";
+            productCards.forEach(card => {
+                card.style.display = "";
+                totalVisibleProducts++;
+            });
+        } else {
+            // মিল না থাকলে সাময়িকভাবে লুকিয়ে রাখা (বা চাইলে আগের মতো পুরো সেকশন হাইড করা)
+            section.style.display = "none";
+        }
+    });
+
+    // "কোনো পণ্য পাওয়া যায়নি" মেসেজ লুকিয়ে ফেলা
+    let msgContainer = document.getElementById('no-product-msg');
+    if (msgContainer) {
+        msgContainer.style.display = "none";
+    }
+
+    // মোবাইল সাইড মেনু বা ড্রপডাউন খোলা থাকলে বন্ধ করে দেওয়া
+    const mobileCatMenu = document.getElementById('mobile-cat-dropdown');
+    if (mobileCatMenu) mobileCatMenu.classList.remove('open');
+    if (typeof toggleMobileSideMenu === 'function') {
+        const sideMenu = document.getElementById('side-menu');
+        if (sideMenu && sideMenu.classList.contains('active')) {
+            toggleMobileSideMenu();
+        }
+    }
+}
+
+document.addEventListener('click', function(e) {
+    const cartModal = document.getElementById('cart-drawer');
+    const drawerContent = document.querySelector('.cart-drawer-content');
+
+    // যদি মোডাল খোলা থাকে
+    if (cartModal && cartModal.classList.contains('open')) {
+        // যদি ক্লিকটি সরাসরি মোডালের বাইরের অংশে (অর্থাৎ কালো ওভারলে বা ব্যাকগ্রাউন্ডে) হয়, কিন্তু সাদা কন্টেন্টের ভেতরে না হয়
+        if (e.target === cartModal) {
+            cartModal.classList.remove('open');
+        }
+    }
+});
+    </script>
+</body>
+</html>
