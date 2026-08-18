@@ -374,122 +374,39 @@ nav.desktop-nav a:hover {
         }
 
         /* Hero Banner */
-        .hero-section {
-            padding: 16px 0 24px 0;
-        }
+     /* নতুন ব্যানার সেকশনের স্টাইল */
+.hero-section-banner {
+    width: 100%;
+    margin-bottom: 40px;
+}
 
-        .hero-card {
-            background: linear-gradient(to right, #009238, #018f30);
-            border-radius: 16px;
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            position: relative;
-            overflow: hidden;
-        }
+/* কন্টেইনার ফুল উইডথ করার জন্য (যদি আপনার কাস্টম কন্টেইনার থাকে) */
+.container-full {
+    width: 100%;
+    max-width: 1920px; /* অথবা আপনার পছন্দমতো max-width */
+    margin: 0 auto;
+    padding: 0;
+}
 
-        @media (min-width: 768px) {
-            .hero-card {
-                padding: 40px;
-                flex-direction: row;
-            }
-        }
+/* ব্যানার ইমেজের রেসপন্সিভ স্টাইল */
+.hero-banner-img {
+    width: 100%;
+    height: auto; /* ইমেজের অনুপাত ঠিক রাখার জন্য */
+    display: block;
+    object-fit: cover; /* ইমেজটি যেন কন্টেইনারে সুন্দরভাবে ফিট হয় */
+    border-radius: 2px; /* যদি গোল কোণা চান */
+}
 
-        .hero-text {
-            z-index: 10;
-            max-width: 512px;
-            text-align: center;
-            margin-bottom: 24px;
-        }
-
-        @media (min-width: 768px) {
-            .hero-text {
-                text-align: left;
-                margin-bottom: 0;
-            }
-        }
-
-        .hero-badge {
-            background-color: rgba(255, 255, 255, 0.8);
-            color: #9a3412;
-            font-size: 12px;
-            font-weight: 700;
-            padding: 4px 12px;
-            border-radius: 9999px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            display: inline-block;
-            margin-bottom: 12px;
-        }
-
-        .hero-title {
-            font-size: 24px;
-            font-weight: 800;
-            color: #111827;
-            line-height: 1.25;
-            margin-bottom: 12px;
-        }
-
-        @media (min-width: 640px) {
-            .hero-title {
-                font-size: 36px;
-            }
-        }
-
-        .btn-primary {
-            background-color: rgb(0, 61, 0);
-            color: white;
-            font-weight: 500;
-            padding: 10px 24px;
-            border-radius: 8px;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-            display: inline-block;
-            font-size: 14px;
-            transition: background-color 0.2s;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary-hover);
-        }
-
-        .hero-graphic {
-            z-index: 10;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero-circle {
-            width: 192px;
-            height: 192px;
-            background-color: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(12px);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 4px solid rgba(255, 255, 255, 0.5);
-        }
-
-        @media (min-width: 640px) {
-            .hero-circle {
-                width: 256px;
-                height: 256px;
-            }
-        }
-
-        .hero-circle i {
-            color: #007736;
-            font-size: 70px;
-        }
-
-        @media (min-width: 640px) {
-            .hero-circle i {
-                font-size: 96px;
-            }
-        }
+/* মোবাইল বা ট্যাবলেটের জন্য রেসপন্সিভ (ছোট স্ক্রিনে হাইট অ্যাডজাস্ট করতে পারেন) */
+@media screen and (max-width: 768px) {
+    .hero-section-banner {
+        margin-bottom: 40px;
+    }
+    .hero-banner-img {
+        height: auto; /* ছোট স্ক্রিনে ব্যানারের উচ্চতা নির্দিষ্ট করে দিতে পারেন */
+        object-fit: cover;
+    }
+}
 
         /* Floating Cart Widget */
         .floating-cart {
@@ -1704,23 +1621,13 @@ html {
         </div>
     </div>
 
-    <!-- Main Hero Banner Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="hero-card">
-                <div class="hero-text">
-                    <span class="hero-badge">আসল ও বেশি ফলনদায়ক</span>
-                    <h1 class="hero-title">সরাসরি নিজস্ব নার্সারি থেকে আপনার সপ্নের বাগানে নিতে আজই অর্ডার করুন</h1>
-                    <a href="#products2" class="btn-primary">পণ্যসমূহ দেখুন</a>
-                </div>
-                <div class="hero-graphic">
-                    <div class="hero-circle">
-                        <i class="fa-solid fa-jar"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+   <!-- Main Hero Banner Section (Updated) -->
+<section class="hero-section-banner">
+    <div class="container-full">
+        <!-- এখানে শুধু আপনার ব্যানারের ছবিটি বসবে -->
+        <img src="bannar.jpg" alt="নার্সারি ও গার্ডেন ব্যানার" class="hero-banner-img">
+    </div>
+</section>
 
     <!-- Floating Right Cart Widget -->
     <div class="floating-cart">
